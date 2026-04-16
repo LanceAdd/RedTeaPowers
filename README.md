@@ -177,12 +177,6 @@ Copy the skill directories you want from `skills/` into your Codex skills direct
 ~/.codex/skills
 ```
 
-On this machine that path is typically:
-
-```text
-C:\Users\lanceadd\.codex\skills
-```
-
 `PACKAGE.md` is useful package documentation, but runtime discovery depends on the individual skill folders.
 
 ## 🔧 Packaging Rule

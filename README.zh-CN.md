@@ -176,12 +176,6 @@ git clone git@github.com:LanceAdd/RedTeaPowers.git
 ~/.codex/skills
 ```
 
-在这台机器上通常是：
-
-```text
-C:\Users\lanceadd\.codex\skills
-```
-
 `PACKAGE.md` 适合作为 package 说明，但运行时真正被发现的是每个独立的 skill 目录。
 
 ## 🔧 打包规则
