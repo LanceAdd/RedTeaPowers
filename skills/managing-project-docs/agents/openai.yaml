@@ -1,4 +1,4 @@
 interface:
   display_name: "Managing Project Docs"
-  short_description: "Choose doc types, numbering, and split rules."
-  default_prompt: "Use $managing-project-docs to choose the right project document type, numbering, and split strategy for this work."
+  short_description: "Choose between docs bootstrap, migration audit, and the next real doc type."
+  default_prompt: "Use $managing-project-docs to decide whether this work needs no document, a docs bootstrap pass (`new:minimal`, `new:standard`, `legacy:audit`, or `legacy:standard`), or a specific project document type with numbering and split rules."
