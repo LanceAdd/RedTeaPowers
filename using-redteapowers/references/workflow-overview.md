@@ -67,6 +67,19 @@ Use when:
 - several approaches need alignment
 - mistakes would be expensive to unwind
 
+## After Mainline Stabilizes
+
+When the first slice has already opened the topic and the mainline is stable enough to inspect:
+
+- switch from convergence mode to batch delivery mode
+- keep one primary workstream for the topic
+- reduce document and sync churn
+- batch same-kind follow-up work into a small number of meaningful passes
+- bring real flow or real experience verification forward before the very end
+- extract reusable guidance, reference material, scripts, or validation rules only where they reduce future rework
+
+See [002-opened-topic-stabilization.md](../../shaping-work/references/002-opened-topic-stabilization.md) for the detailed mode-switch rules.
+
 ## Validation Shapes
 
 Choose the lightest strategy that guards the real risk:

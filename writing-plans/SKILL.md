@@ -9,6 +9,7 @@ description: Use when work actually needs an implementation plan or execution ch
 
 Write a plan only when planning will reduce confusion, coordination cost, or execution risk. If a lightweight checklist is enough, do not inflate it into a formal plan.
 Default to the smallest artifact that keeps execution moving.
+Once a topic is already open and the mainline is stable, use the plan to organize batch delivery and systemization, not to preserve first-slice behavior.
 
 Before using this skill, route the work with `shaping-work`. If validation strategy is not decided yet, use `choosing-test-strategy` before finalizing the plan.
 
@@ -42,6 +43,17 @@ Write plans for execution, not ceremony.
 - Include only as much detail as the executor actually needs.
 - Prefer a few strong tasks with clear checkpoints over a wall of tiny steps.
 - Do not write a formal plan whose only purpose is to serialize obvious same-kind follow-up work.
+
+## When The Topic Is Already Open
+
+If a first slice already validated the route, the plan should shift into stabilization mode:
+
+- define one primary workstream for the topic
+- batch same-area follow-up work into a small number of passes
+- name any systemization outputs that should come out of the batch
+- pull real experience verification forward enough to influence the remaining work
+
+Use `../shaping-work/references/002-opened-topic-stabilization.md` as the reference for this mode switch.
 
 ## Document Location
 
@@ -103,6 +115,12 @@ Every formal plan must make these things explicit:
 - What the executor should not expand or overbuild
 - That any written plan or checklist artifact is stored as UTF-8 text
 
+If the topic is already open, also make explicit:
+
+- which batch turns the topic from first-slice work into steady delivery
+- whether a `guide`, `reference`, script, checklist, or reusable pattern should be created or updated
+- when real experience verification must happen before final completion
+
 ## No Placeholder Planning
 
 These are plan failures:
@@ -121,7 +139,8 @@ After writing the plan:
 3. Check that task granularity supports momentum instead of slowing it down.
 4. Check that the validation section matches the chosen testing strategy.
 5. Check that the plan is not preserving micro-slice behavior after the topic is already open.
-6. Split oversized plans only when readability truly suffers.
+6. Check that the plan reduces coordination and document churn instead of increasing it.
+7. Split oversized plans only when readability truly suffers.
 
 ## Handoff
 

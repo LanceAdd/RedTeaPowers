@@ -10,6 +10,7 @@ description: Route new development requests by size, uncertainty, and coupling b
 Route work before committing to a heavy process. Choose the lightest workflow that keeps the work understandable, testable, and worth revisiting.
 
 Do not confuse "smallest closed loop" with "best long-term pace." Use a thin first slice to open the topic when needed, then switch quickly to efficient batch progress.
+Once the mainline is stable enough, shift from architecture convergence into batch delivery mode instead of continuing topic-by-topic micro-loops.
 
 Treat over-convergence as a delivery risk. The goal is not to eliminate uncertainty at all costs. The goal is to remove only the uncertainty that would materially change the route or implementation.
 
@@ -22,6 +23,7 @@ Treat over-convergence as a delivery risk. The goal is not to eliminate uncertai
 5. Choose one route from the table below.
 6. If a thin first slice is needed, set an explicit follow-up checkpoint for batching or escalation.
 7. State the route briefly, then proceed without adding heavier ceremony.
+8. If the topic is already open, run the stabilization checkpoint below before creating more slices or documents.
 
 ## Default Convergence Budget
 
@@ -50,6 +52,27 @@ Use a thin first slice only to open uncertainty, not as a permanent execution st
 - Do not create a second or third tiny slice unless new uncertainty appeared that actually changes the route.
 - If the work keeps resisting batching after several slices, escalate deliberately to a plan or spec instead of staying in endless micro-loops.
 
+## Opened-Topic Stabilization Checkpoint
+
+Run this checkpoint once a first slice or initial implementation has already opened the topic.
+
+Treat the mainline as stable enough to switch modes when most of these are true:
+
+- the core path now works or is close enough to inspect meaningfully
+- system boundaries are frozen enough that the route is no longer changing
+- the next visible work is mostly same-kind cleanup, follow-through, or consistency work
+- new questions are no longer architectural and mainly affect execution details
+
+When the mainline is stable:
+
+- switch from convergence mode to batch delivery mode
+- keep one primary workstream for the topic instead of scattering follow-up docs
+- batch same-area follow-up work into a small number of meaningful passes
+- reduce document churn to the minimum needed for execution and future reuse
+- pull real experience verification forward instead of waiting until the very end
+
+See [002-opened-topic-stabilization.md](references/002-opened-topic-stabilization.md) for the detailed mode switch, systemization outputs, and completion signals.
+
 ## Guardrails
 
 - Batch same-kind small issues instead of creating one micro-loop per issue.
@@ -58,6 +81,8 @@ Use a thin first slice only to open uncertainty, not as a permanent execution st
 - Do not stay in endless "minimal next slice" mode after the topic is already understood.
 - Re-route when the work grows or shrinks. A lightweight plan can replace a spec-heavy flow, and direct execution can expand into a batch checklist.
 - Prefer one visible workstream per topic over scattered document fragments.
+- Once the topic is open and stable, optimize for batch progress and systemization rather than more edge freezing.
+- Do not delay real user-flow or real experience checks until the last possible moment if the mainline is already usable.
 
 ## Output
 
@@ -72,3 +97,4 @@ Artifacts: update todolist + implement in one pass
 ## References
 
 - Read [001-work-sizing-and-routing.md](references/001-work-sizing-and-routing.md) for the sizing signals, route examples, and escalation rules.
+- Read [002-opened-topic-stabilization.md](references/002-opened-topic-stabilization.md) for switching from first-slice work into batch delivery and stable system building.
