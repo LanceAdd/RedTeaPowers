@@ -2,13 +2,17 @@ RedTeaPowers Character Icon
 
 Primary
 
-   (( 
-  ))  
-[ R>T ]
+        )   )  (
+       (   (   ) )
+        )   ) ( (
+      ╭───────────╮
+      │ RedTea >  │__
+      │ Powers    │  )
+      ╰───────────╯__/
 
 Compact
 
-[R>T]
+[RedTea>]
 
 Tiny
 
@@ -17,8 +21,8 @@ R>T
 Meaning
 
 - (( and )) suggest tea steam, warmth, and momentum
-- R>T suggests RedTea, routing, terminal-style prompts, and forward motion
-- [ ] suggests a package shell, command surface, or tool boundary
+- RedTea > suggests RedTea, routing, terminal-style prompts, and forward motion
+- the cup body suggests a package shell, command surface, or tool boundary
 
 Usage Notes
 
