@@ -17,8 +17,8 @@ Use this matrix to track the current calibration state of the active RedTeaPower
 | `researching-and-collecting` | factual discovery and synthesis | gather evidence and normalize findings before design or execution | `Aligned` |
 | `brainstorming` | design before implementation | keep collaborative design conditional instead of default ceremony | `Aligned` |
 | `choosing-test-strategy` | validation router | remain the source of truth for non-dogmatic validation choice | `Aligned` |
-| `writing-plans` | formal execution artifact writer | protect checklist-vs-plan boundary and keep validation explicit | `Aligned` |
-| `executing-plans` | inline execution from plan or checklist | keep completion verification and branch-closeout handoffs consistent | `Aligned` |
+| `writing-plans` | formal execution artifact writer | protect session-tracking-vs-plan boundary and keep validation explicit | `Aligned` |
+| `executing-plans` | inline execution from written plan | keep completion verification and branch-closeout handoffs consistent | `Aligned` |
 | `systematic-debugging` | evidence-first debugging workflow | keep the body lean while preserving the evidence-first core and specialized references | `Aligned` |
 | `verification-before-completion` | final evidence gate | keep completion claims strategy-neutral and consistently referenced from closing flows | `Aligned` |
 | `finishing-a-development-branch` | branch integration and cleanup | keep branch closeout dependent on verified evidence instead of test-only assumptions | `Aligned` |

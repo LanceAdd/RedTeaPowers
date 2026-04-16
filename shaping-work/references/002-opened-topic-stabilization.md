@@ -38,7 +38,7 @@ After stabilization:
 
 When the topic is open:
 
-- prefer one primary checklist, plan, or workstream per topic
+- prefer one primary plan or workstream per topic
 - batch same-area issues instead of creating new mini-topics
 - collapse same-kind polish, cleanup, and consistency work into fewer passes
 - keep execution artifacts aligned with actual delivery batches
@@ -49,9 +49,9 @@ If 3 or more same-kind low-risk follow-ups are visible, they should usually beco
 
 Check whether the topic now needs one or more of these stable outputs:
 
-- `guide` for how the area works
+- `guide` for the next stage's development charter
 - `reference` for reusable facts, contracts, or schemas
-- reusable checklist for future passes
+- reusable plan template or execution pattern for future passes
 - script for repeated maintenance or migration work
 - validation rule or test strategy note for future similar changes
 - canonical implementation pattern in code or docs

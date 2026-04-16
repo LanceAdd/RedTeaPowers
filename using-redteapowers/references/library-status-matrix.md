@@ -21,11 +21,11 @@ All active documents and references should be read and written as UTF-8 text.
 | `managing-project-docs` | Keep | New doc taxonomy and UTF-8 policy live here | Keep as the documentation control layer |
 | `brainstorming` | Keep | Rewritten to be conditional instead of mandatory | Keep, but only trigger when real design uncertainty exists |
 | `writing-plans` | Keep | Rewritten to support plans and lighter execution artifacts | Keep for formal execution planning |
-| `executing-plans` | Keep | Rewritten to execute plans or checklists without adding ceremony | Keep as the inline execution path |
+| `executing-plans` | Keep | Rewritten to execute written plans without adding ceremony | Keep as the inline execution path |
 | `subagent-driven-development` | Keep | Rewritten for task-or-batch execution with scope-first review | Keep as the same-session delegated execution path |
 | `systematic-debugging` | Keep | Still central, now routed through validation strategy selection | Keep as the default bug workflow |
 | `verification-before-completion` | Keep | Still essential and now strategy-neutral | Keep as the final evidence gate |
-| `using-git-worktrees` | Keep | Still useful and now supports plan or checklist execution | Keep as an environment/setup helper |
+| `using-git-worktrees` | Keep | Still useful and now supports direct execution or written-plan execution | Keep as an environment/setup helper |
 | `requesting-code-review` | Keep | Still useful and now aligned to requirements, scope, and UTF-8 doc checks | Keep as the outward review workflow |
 | `receiving-code-review` | Keep | Still useful and not in direct conflict with the new process model | Keep |
 | `finishing-a-development-branch` | Keep | Still useful as a completion/branch integration workflow | Keep |

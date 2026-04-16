@@ -23,10 +23,10 @@ Group by the cleanup pattern, not just by file extension.
 
 Examples:
 
-- old spec-heavy folder that really contains guide, reference, and archive material
+- old spec-heavy folder that really contains phase-guide, reference, and archive material
 - notes folder that should become reference plus discuss
-- several task scraps that should merge into one todolist
-- old roadmap and plan docs that should become archive plus a fresh active queue
+- several task scraps that should merge into one plan
+- old roadmap and plan docs that should become archive plus a fresh active plan
 
 ## Batch-First Rule
 
@@ -40,7 +40,7 @@ Examples:
 
 Do not preserve fake granularity by migrating each tiny file in isolation.
 
-## Action Checklist
+## Action Checks
 
 For each batch, check:
 
@@ -80,7 +80,7 @@ Write a short summary or `change` entry:
 ```text
 Completed migration:
 - merged old API notes into docs/reference/005-payments-api.md
-- split docs/spec/payments.md into guide + spec + reference
+- split docs/spec/payments.md into guide + spec + reference when it mixed phase charter, approved behavior, and lookup material
 - moved retired launch notes into docs/archive/011-payments-launch-history.md
 - updated links and renumbered affected files
 - rewrote migrated files as UTF-8

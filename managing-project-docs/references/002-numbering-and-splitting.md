@@ -16,7 +16,6 @@ Use numbering when order matters inside a directory, especially for:
 - `plan`
 - `change`
 - `archive`
-- `todolist`
 
 Keep the slug short and stable. Rename only when clarity improves enough to justify fixing links.
 

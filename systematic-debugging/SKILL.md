@@ -9,9 +9,23 @@ description: Use when encountering a bug, failing test, flaky behavior, broken i
 
 Debugging is an investigation skill, not a sequence of guesses.
 
-Core principle: isolate the cause before changing the code. Keep the loop short when the evidence is clear, but never skip the evidence.
+The goal is to isolate the cause before changing code. Keep the loop short when the evidence is clear, but do not skip the evidence.
 
-For obvious single-point mistakes, a short investigation is enough. For unstable or cross-boundary failures, slow down and gather better evidence before touching implementation.
+## When To Use
+
+Use this skill when:
+
+- a bug, failing test, flaky behavior, broken integration, or unexpected technical result needs investigation
+- the failure cause is not yet isolated
+- the safest next step is to gather evidence before proposing a fix
+
+## Do Not Use When
+
+Do not use this skill when:
+
+- the issue is already isolated to one obvious concrete mistake
+- the task is mainly design or planning rather than failure investigation
+- the next step is no longer investigation but completion verification
 
 ## Workflow
 
@@ -26,63 +40,36 @@ For obvious single-point mistakes, a short investigation is enough. For unstable
 
 ## Investigation Rules
 
-- Do not stack speculative fixes.
-- Do not change multiple variables at once unless the batch itself is the smallest testable probe.
-- Do not call it root cause until you can explain why the failure happens.
-- If you cannot reproduce the issue yet, gather logs, inputs, environment facts, or timing evidence instead of guessing.
-- If three fix attempts have already failed, question the architecture or boundary assumptions before trying a fourth.
+- do not stack speculative fixes
+- do not change multiple variables at once unless the batch is the smallest useful probe
+- do not call it root cause until you can explain why the failure happens
+- if you cannot reproduce the issue, gather logs, inputs, environment facts, or timing evidence instead of guessing
+- if several fix attempts have already failed, question the boundary or architecture assumptions before trying again
 
-## Fast Path For Obvious Failures
+## Fast Path
 
-Use the fast path only when the evidence already isolates one concrete mistake such as:
+Use a short investigation only when the evidence already isolates one concrete mistake such as:
 
 - wrong import or file path
 - inverted condition
 - incorrect config key
-- bad variable or field mapping
+- bad field mapping
 - missing argument or dependency wiring
 
-In those cases:
+In that case:
 
 1. name the cause plainly
 2. apply the smallest safe fix
 3. verify the original failure path
 4. verify the surrounding risk with the chosen validation
 
-## Cross-Boundary Failures
-
-When the issue crosses components, services, processes, or environments:
-
-- inspect inputs and outputs at each boundary
-- verify config and environment propagation
-- find the first boundary where reality diverges from expectation
-- fix the upstream cause when possible instead of patching downstream fallout
-
 ## Validation
 
 After isolating the cause:
 
 - choose the lightest validation that protects the real risk
-- use `redteapowers:choosing-test-strategy` if the right validation mode is not obvious
-- use `redteapowers:verification-before-completion` before claiming the bug is fixed
-
-Good debugging evidence may include:
-
-- a reliable reproduction
-- a failing and then passing regression test
-- a build or integration check
-- explicit manual verification steps
-- targeted logs or traces that show the failure disappearing for the right reason
-
-## Stop Signals
-
-Stop and reset the investigation when you catch yourself doing any of these:
-
-- proposing a fix before naming the cause
-- bundling several guesses into one patch
-- saying "it is probably X"
-- relying on old test output instead of fresh evidence
-- repeating the same failed idea with small wording changes
+- use `choosing-test-strategy` if the right validation mode is not obvious
+- use `verification-before-completion` before claiming the bug is fixed
 
 ## Output
 
@@ -95,11 +82,18 @@ Root-cause hypothesis: the fetch wrapper stopped forwarding the auth header in t
 Next probe: compare the working profile update request with the failing settings request.
 ```
 
+## Handoff
+
+After debugging:
+
+- execute the smallest safe fix once the cause is isolated
+- use `choosing-test-strategy` if the validation mode still needs a decision
+- use `verification-before-completion` before any success claim
+- use `shaping-work` only if the investigation reveals the problem is really a broader route or scope issue
+
 ## References
 
-Read these only when the situation calls for them:
-
-- `root-cause-tracing.md` for deeper tracing patterns
-- `condition-based-waiting.md` for race conditions, flake, and timing issues
-- `defense-in-depth.md` for layered fixes after the actual cause is known
-- `find-polluter.sh` for isolation help in polluted test suites
+- Use [root-cause-tracing.md](root-cause-tracing.md) for deeper tracing patterns.
+- Use [condition-based-waiting.md](condition-based-waiting.md) for race conditions, flake, and timing issues.
+- Use [defense-in-depth.md](defense-in-depth.md) for layered fixes after the actual cause is known.
+- Use [find-polluter.sh](find-polluter.sh) for polluted test-suite isolation.

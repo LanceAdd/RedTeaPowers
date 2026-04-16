@@ -63,7 +63,7 @@ RedTeaPowers 主要优化这几件事：
 推荐入口：
 
 1. `using-redteapowers` 负责总路由
-2. `shaping-work` 决定是直接做、checklist、plan，还是 `spec + plan`
+2. `shaping-work` 决定是直接执行、会话任务跟踪、plan，还是 `spec + plan`
 3. `researching-and-collecting` 用于缺事实、缺盘点、缺对比材料时
 4. `choosing-test-strategy` 用于先锁定验证方式
 5. `managing-project-docs` 用于决定应该存在什么文档工件

@@ -18,7 +18,7 @@ RedTeaPowers keeps the strongest parts of superpowers, but changes the defaults:
 |---------------------|-------------------------|
 | `using-superpowers` | `using-redteapowers` |
 | Default brainstorming before creative work | `shaping-work` first, then `brainstorming` only if real design uncertainty remains |
-| Default spec/plan flow | Route to direct execution, checklist, plan, or spec plus plan based on task shape |
+| Default spec/plan flow | Route to direct execution, session task tracking, plan, or spec plus plan based on task shape |
 | Default TDD | `choosing-test-strategy` first, `test-driven-development` only if selected |
 | `superpowers:` namespace | `redteapowers:` namespace |
 | `.superpowers/` project state | `.redteapowers/` project state |
@@ -68,21 +68,20 @@ RedTeaPowers uses:
 - `reference`
 - `change`
 - `archive`
-- `todolist`
 - `scripts`
 
 ### Migration rule
 
 When converting old docs:
 
-- move orientation material to `guide`
-- move unresolved discussion to `discuss`
+- move stage-level development charters to `guide`
+- move unresolved pre-execution requirement discussion to `discuss`
 - keep only approved target behavior in `spec`
 - keep executable sequencing in `plan`
 - move lookup material to `reference`
 - track per-round progress in `change`
 - move inactive material to `archive`
-- keep current queue in `todolist`
+- turn active queues into `plan` when they need a durable document, otherwise keep them in `TodoWrite` / `update_plan`
 
 Add numbered filenames such as `001-topic.md`, `002-topic.md`, and preserve UTF-8 encoding when rewriting or splitting files.
 
@@ -128,10 +127,10 @@ When migrating prompts:
 
 - change `spec compliance` to `scope compliance` where appropriate
 - switch named agent examples to `redteapowers:...`
-- allow checklist-based execution where a formal plan is unnecessary
+- allow session-tracked execution where a formal plan is unnecessary
 - add UTF-8 checks when prompts review document work
 
-## Migration Checklist
+## Migration Steps
 
 - [ ] Replace `using-superpowers` with `using-redteapowers`
 - [ ] Replace `superpowers:` namespace with `redteapowers:`

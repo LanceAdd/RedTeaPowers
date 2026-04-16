@@ -39,7 +39,7 @@ Skip any step and you are guessing, not verifying.
 | Build succeeds | Fresh build output or exit code |
 | Bug fixed | Original reproduction no longer fails, plus any required regression coverage |
 | UI change is correct | Explicit manual verification steps and what was confirmed |
-| Requirements met | Checklist against the artifact, backed by the chosen validation evidence |
+| Requirements met | Requirement-by-requirement verification against the artifact, backed by the chosen validation evidence |
 | Agent completed work | Verified file changes plus fresh validation of the result |
 
 ## Red Flags

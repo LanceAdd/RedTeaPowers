@@ -63,7 +63,7 @@ route -> research if facts are missing -> design only if needed -> plan only if 
 Recommended entry points:
 
 1. `using-redteapowers` for top-level routing
-2. `shaping-work` to choose direct execution, checklist, plan, or spec-plus-plan
+2. `shaping-work` to choose direct execution, session task tracking, plan, or spec-plus-plan
 3. `researching-and-collecting` when the next blocker is missing facts, inventory, or comparison work
 4. `choosing-test-strategy` before locking in validation
 5. `managing-project-docs` when deciding what artifact should exist
@@ -86,10 +86,21 @@ RedTeaPowers is not just a rename. It changes the operating behavior of the orig
 |--------------|----------------------|
 | `brainstorm -> spec -> plan -> execute` by habit | route first, then add only the next layer that materially helps |
 | heavy requirement convergence up front | small convergence budget with explicit stop rules |
-| `spec` and `plan` as default document outcomes | broader doc taxonomy with `guide`, `discuss`, `reference`, `todolist`, `change`, `archive`, and `scripts` |
+| `spec` and `plan` as default document outcomes | broader doc taxonomy with `guide`, `discuss`, `reference`, `change`, `archive`, and `scripts`, plus session task tracking in `TodoWrite` / `update_plan` |
 | silent TDD-first behavior | choose validation first, use TDD only when it actually fits |
 | one tiny loop per visible issue | batch same-kind low-risk follow-up work |
 | thin first slice forever | open the topic, then stabilize into efficient delivery |
+
+## Document Taxonomy Note
+
+Two document types are easy to misuse unless their boundaries stay explicit:
+
+- `discuss` is for pre-execution requirement discussion, open questions, and alternatives while the work is not entering implementation yet
+- once the team decides to execute, the approved behavior and boundaries should move into `spec` instead of staying in `discuss`
+- `guide` is for a stage-level development charter or phased development outline
+- `guide` is not the default home for general explanatory material, architecture overview, or "how this area works" notes; those usually belong in `reference`
+
+See [docs/reference/003-document-taxonomy-clarifications.md](docs/reference/003-document-taxonomy-clarifications.md) for the sharper boundary rules.
 
 ## Included In The Current Package
 

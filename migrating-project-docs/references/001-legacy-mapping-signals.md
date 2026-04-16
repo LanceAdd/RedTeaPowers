@@ -19,18 +19,17 @@ Prefer these targets:
 - `docs/reference/`
 - `docs/change/`
 - `docs/archive/`
-- `docs/todolist/`
 - `scripts/`
 
 ## Quick Mapping Table
 
 | Legacy signal | Usually migrate to | Notes |
 |---------------|--------------------|-------|
-| architecture overview, orientation, topic map | `guide` | Keep big-picture material together |
-| unapproved ideas, decision debate, open questions | `discuss` | Use when the behavior is not yet locked |
+| architecture overview, orientation, topic map | `reference` | Keep explanatory material in lookup docs, not `guide` |
+| unapproved ideas, decision debate, open questions | `discuss` | Use only while requirements are still under discussion and not entering execution |
 | approved behavior, scope, success criteria | `spec` | Keep only the stable target behavior |
 | ordered implementation sequence | `plan` | Use only when sequencing still matters |
-| active tasks, blockers, next steps, cleanup queue | `todolist` | Better than forcing a full plan |
+| active tasks, blockers, next steps, cleanup queue | `plan` or session task tracking | Use `plan` only when the queue needs a durable cross-session artifact |
 | schema notes, API facts, terminology, lookup details | `reference` | Move facts out of spec/plan when crowded |
 | what changed this round and why | `change` | Use for migration logs or active project updates |
 | retired notes, finished stage docs, superseded plans | `archive` | Keep searchable, not active |
@@ -44,13 +43,13 @@ These are weak signals, not rules:
   Often become `spec`, but can also become `guide`, `discuss`, or `reference`
 
 - `plan.md`, `roadmap.md`, `implementation.md`
-  Often become `plan`, but short active work may really be `todolist`
+  Often become `plan`, but very short active work may not deserve a document after migration
 
 - `notes.md`, `research.md`, `scratch.md`
   Often become `reference`, `discuss`, or `archive`
 
 - `todo.md`, `tasks.md`, `next-steps.md`
-  Often become `todolist`
+  Often become `plan` or collapse into session task tracking
 
 - `changelog.md`, `updates.md`, `round-notes.md`
   Often become `change` or `archive`
@@ -61,18 +60,19 @@ These are weak signals, not rules:
 
 Signals:
 
-- explains the area
-- orients readers
-- gives strategy or development direction
-- useful even without immediate implementation
+- defines a stage or phase development charter
+- gives bounded development direction for the next execution phase
+- records stage-specific principles or constraints
+- exists to steer execution for that stage, not to explain the area generally
 
 ### discuss
 
 Signals:
 
+- contains requirement discussion before execution
 - contains alternatives and tradeoffs
 - contains unresolved questions
-- not yet approved as project truth
+- not yet entering implementation
 
 ### spec
 
@@ -125,37 +125,29 @@ Signals:
 - still historically useful
 - likely to confuse readers if left in active folders
 
-### todolist
-
-Signals:
-
-- near-term tasks
-- blockers and prerequisites
-- several same-kind small fixes
-- active queue that should move soon
-
 ## Mixed Documents
 
 A legacy document should usually be split when it combines:
 
 - overview + detailed reference
 - approved behavior + open questions
-- implementation plan + active checklist
+- implementation plan + transient task queue
 - active guidance + historical notes
 
 Common split patterns:
 
 - `guide` + `reference`
 - `spec` + `reference`
-- `plan` + `todolist`
 - active type + `archive`
 
 ## Migration Biases
 
 When uncertain:
 
-- prefer `discuss` over `spec`
-- prefer `todolist` over `plan` for near-term actionable queues
+- prefer `discuss` over `spec` only while the requirement is still pre-execution
+- once execution is chosen, prefer `spec` over leaving active decisions in `discuss`
+- prefer session task tracking over a written plan for very short near-term queues
+- prefer `plan` when the queue needs durable sequencing across sessions
 - prefer `archive` over leaving stale material active
 - prefer `reference` for stable facts
 

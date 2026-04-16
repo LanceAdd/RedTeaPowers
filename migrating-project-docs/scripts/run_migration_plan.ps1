@@ -2,7 +2,7 @@ param(
     [Parameter(Mandatory = $true)]
     [string]$SourceRoot,
     [string]$Output,
-    [string]$Title = "Legacy Documentation Migration Checklist",
+    [string]$Title = "Legacy Documentation Migration Plan",
     [switch]$ForceFallback
 )
 
@@ -11,8 +11,8 @@ $ErrorActionPreference = "Stop"
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $skillDir = Split-Path -Parent $scriptDir
-$pythonScript = Join-Path $scriptDir "generate_migration_checklist.py"
-$templatePath = Join-Path $skillDir "references\\003-manual-migration-checklist-template.md"
+$pythonScript = Join-Path $scriptDir "generate_migration_plan.py"
+$templatePath = Join-Path $skillDir "references\\003-manual-migration-plan-template.md"
 
 function Get-PythonCommand {
     $candidates = @(
@@ -69,7 +69,7 @@ if ($null -ne $python) {
 $templateText = Get-Content -Raw -LiteralPath $templatePath -Encoding UTF8
 $content = New-ManualFallbackContent -TemplateText $templateText -ResolvedSourceRoot $resolvedSourceRoot -DocTitle $Title
 
-Write-Warning "Python runtime not detected. Falling back to the manual migration checklist template."
+Write-Warning "Python runtime not detected. Falling back to the manual migration plan template."
 
 if ($Output) {
     $outputPath = [System.IO.Path]::GetFullPath($Output)
@@ -78,7 +78,7 @@ if ($Output) {
         [System.IO.Directory]::CreateDirectory($outputDir) | Out-Null
     }
     [System.IO.File]::WriteAllText($outputPath, $content, [System.Text.UTF8Encoding]::new($false))
-    Write-Host "Wrote manual fallback checklist to $outputPath"
+    Write-Host "Wrote manual fallback plan to $outputPath"
 } else {
     Write-Output $content
 }

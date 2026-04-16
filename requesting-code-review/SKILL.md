@@ -32,7 +32,7 @@ Usually unnecessary:
 Before requesting review, prepare a small bundle containing:
 
 - what changed
-- what requirement, plan, checklist, or bug fix the change should satisfy
+- what requirement, plan, or bug fix the change should satisfy
 - what files or diff range the reviewer should inspect
 - what validation evidence already exists
 - any known risks, tradeoffs, or questions you want the reviewer to focus on
@@ -57,7 +57,7 @@ Use `code-reviewer.md` as the review prompt template when dispatching a reviewer
 Prefer including:
 
 - `BASE_SHA` and `HEAD_SHA` when the review is diff-based
-- the active plan, checklist, or requirement excerpt
+- the active plan or requirement excerpt
 - the chosen validation evidence
 - any specific areas where you want extra scrutiny
 

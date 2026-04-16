@@ -111,7 +111,7 @@ Improve names, structure, and duplication while keeping tests green.
 | "I already wrote the implementation, I can adapt it" | Delete it and restart if you are doing TDD. |
 | "Manual verification should count as TDD" | Manual checks are a different strategy. |
 
-## Completion Checklist
+## Completion Checks
 
 - [ ] TDD was explicitly chosen before implementation
 - [ ] Each targeted test failed before the code was written

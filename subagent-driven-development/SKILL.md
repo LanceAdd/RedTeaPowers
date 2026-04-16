@@ -1,20 +1,20 @@
 ---
 name: subagent-driven-development
-description: Use when executing an implementation plan or batch checklist in the current session and the work can be divided into clear tasks or batches for fresh subagents. Best when you want same-session execution with review checkpoints but do not want to manage every edit inline.
+description: Use when executing an implementation plan in the current session and the work can be divided into clear tasks or batches for fresh subagents. Best when you want same-session execution with review checkpoints but do not want to manage every edit inline.
 ---
 
 # Subagent-Driven Development
 
 ## Overview
 
-Execute a plan or checklist by dispatching a fresh subagent per task or batch, then reviewing the result before moving on. Keep the context clean, keep the batches meaningful, and avoid re-fragmenting the work into tiny loops.
+Execute a written plan by dispatching a fresh subagent per task or batch, then reviewing the result before moving on. Keep the context clean, keep the batches meaningful, and avoid re-fragmenting the work into tiny loops.
 
 Core principle: fresh subagent per task or batch, then two-stage review: scope compliance first, code quality second.
 
 ## When To Use
 
 Use this skill when:
-- You already have a plan or checklist worth executing
+- You already have a written plan worth executing
 - Tasks or batches can be handed off independently
 - You want same-session progress with review gates
 
@@ -25,7 +25,7 @@ Do not use this skill when:
 
 ## Process
 
-1. Read the plan or checklist once and extract every task or batch with the needed context.
+1. Read the plan once and extract every task or batch with the needed context.
 2. Create tracking for the full set of tasks or batches.
 3. For each item:
    - Dispatch an implementer subagent with the full task text and context
@@ -70,7 +70,7 @@ Never ignore a blocker and never force the same failed setup to repeat.
 - Fresh context per task or batch
 - Better same-session momentum than fully manual execution
 - Review catches scope drift before it compounds
-- Supports both formal plans and lighter grouped checklists
+- Supports both formal plans and lighter grouped plan batches
 - Allows meaningful batching without forcing one huge inline execution context
 
 ## Red Flags

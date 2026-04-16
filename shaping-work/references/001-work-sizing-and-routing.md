@@ -21,14 +21,14 @@ Choose `direct execution` when:
 - Verification is straightforward
 - Splitting the work further would add overhead, not clarity
 
-Choose `batch checklist` when:
+Choose `direct execution with session task tracking` when:
 - The request includes several related small changes
 - The same files, component, or topic will be touched repeatedly
 - The main risk is wasted setup time from over-splitting
 
 Choose `lightweight plan` when:
 - The work needs ordering across several steps
-- You want a shared checklist before implementation
+- The work needs a written artifact before implementation starts
 - The task is too big for one reply but too clear for a formal spec
 
 Choose `spec plus plan` when:
@@ -59,7 +59,7 @@ De-escalate the route when:
 
 ```text
 Request: "Fix the spacing, copy, and button states across three related settings cards."
-Route: batch checklist
+Route: direct execution with session task tracking
 Reason: same topic, same component family, low ambiguity
 ```
 

@@ -31,7 +31,7 @@ git diff --stat {BASE_SHA}..{HEAD_SHA}
 git diff {BASE_SHA}..{HEAD_SHA}
 ```
 
-## Review Checklist
+## Review Focus
 
 **Code Quality:**
 - Clean separation of concerns?

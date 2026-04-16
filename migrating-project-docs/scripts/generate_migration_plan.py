@@ -48,17 +48,21 @@ DOC_DIR_HINTS = {
 
 TYPE_KEYWORDS = {
     "guide": {
-        "overview",
-        "architecture",
-        "orientation",
         "guide",
-        "how it works",
-        "principles",
-        "strategy",
-        "outline",
+        "phase charter",
+        "stage charter",
+        "development charter",
+        "delivery charter",
+        "phase guide",
+        "stage guide",
+        "phase outline",
+        "stage outline",
+        "phase principles",
+        "stage principles",
     },
     "discuss": {
         "discussion",
+        "requirements discussion",
         "open question",
         "tradeoff",
         "proposal",
@@ -66,6 +70,7 @@ TYPE_KEYWORDS = {
         "option",
         "alternative",
         "decision needed",
+        "decision debate",
     },
     "spec": {
         "spec",
@@ -89,6 +94,11 @@ TYPE_KEYWORDS = {
     },
     "reference": {
         "reference",
+        "overview",
+        "architecture",
+        "orientation",
+        "how it works",
+        "topic map",
         "schema",
         "api",
         "glossary",
@@ -117,16 +127,6 @@ TYPE_KEYWORDS = {
         "v1",
         "old",
     },
-    "todolist": {
-        "todo",
-        "next step",
-        "follow-up",
-        "follow up",
-        "task",
-        "checklist",
-        "blocker",
-        "action item",
-    },
 }
 
 
@@ -150,7 +150,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description=(
             "Scan a legacy documentation tree and generate a RedTeaPowers "
-            "migration checklist in UTF-8 markdown."
+            "migration plan in UTF-8 markdown."
         )
     )
     parser.add_argument("source_root", help="Root directory to scan")
@@ -160,7 +160,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--title",
-        default="Legacy Documentation Migration Checklist",
+        default="Legacy Documentation Migration Plan",
         help="Title for the generated markdown document",
     )
     parser.add_argument(
@@ -222,12 +222,10 @@ def score_types(path: Path, text: str) -> Counter:
             if keyword in haystack:
                 scores[doc_type] += 1
 
-    if "## " in text or "# " in text:
-        scores["guide"] += 1
     if re.search(r"\bmust\b|\bshould\b", text.lower()):
         scores["spec"] += 1
     if re.search(r"\btask\b|\btodo\b|\bnext step\b|\bblocker\b", text.lower()):
-        scores["todolist"] += 1
+        scores["plan"] += 1
     if re.search(r"\bapi\b|\bschema\b|\bfield\b|\bendpoint\b", text.lower()):
         scores["reference"] += 1
     if re.search(r"\bphase\b|\bmilestone\b|\bdependency\b|\brollout\b", text.lower()):
@@ -246,7 +244,7 @@ def detect_active_state(path: Path, text: str, scores: Counter) -> str:
         return "historical"
     if scores["archive"] >= 2:
         return "historical"
-    if scores["todolist"] >= 2 or "next step" in text.lower() or "blocker" in text.lower():
+    if scores["plan"] >= 2 or "next step" in text.lower() or "blocker" in text.lower():
         return "active"
     return "active"
 
@@ -280,8 +278,8 @@ def choose_action(
     if line_count >= 180 or char_count >= 14000:
         return "split", "The file is long enough that migration should likely split structure by purpose."
     if any(token in lower_name for token in ("todo", "tasks", "next-steps", "next_steps")):
-        return "move", "The file looks like an active task queue and should likely move into todolist."
-    if any(token in lower_name for token in ("readme", "overview", "architecture")) and suggested_type == "guide":
+        return "move", "The file looks like active execution work and should likely become a plan or be reduced into session task tracking."
+    if any(token in lower_name for token in ("readme", "overview", "architecture")) and suggested_type in ("guide", "reference"):
         return "keep-and-rename", "The content looks structurally useful but may need target taxonomy naming."
     return "move-and-renumber", "The content seems reusable but should likely be moved into the target taxonomy."
 
@@ -385,7 +383,7 @@ def render_markdown(title: str, root: Path, records: list[DocRecord]) -> str:
                 lines.append(f"  - ... and {len(batch_records) - 10} more")
             lines.append("")
 
-    lines.append("## File-Level Checklist")
+    lines.append("## File-Level Decisions")
     lines.append("")
     lines.append("| Source | Suggested type | Action | State | Encoding | Notes |")
     lines.append("|--------|----------------|--------|-------|----------|-------|")

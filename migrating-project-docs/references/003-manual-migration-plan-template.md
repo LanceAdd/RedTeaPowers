@@ -15,7 +15,7 @@ Mode: manual fallback template
 List the major document families you found:
 
 - [ ] requirements and behavior docs
-- [ ] implementation plans and checklists
+- [ ] implementation plans and execution task queues
 - [ ] research and notes dumps
 - [ ] meeting or discussion notes
 - [ ] reference materials
@@ -45,7 +45,7 @@ List the major document families you found:
 - Why:
 - Actions:
 
-## File-Level Checklist
+## File-Level Decisions
 
 | Source | Suggested type | Action | Notes |
 |--------|----------------|--------|-------|

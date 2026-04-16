@@ -3,18 +3,18 @@ set -eu
 
 SCRIPT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
 SKILL_DIR=$(CDPATH= cd -- "$SCRIPT_DIR/.." && pwd)
-PYTHON_SCRIPT="$SCRIPT_DIR/generate_migration_checklist.py"
-TEMPLATE_PATH="$SKILL_DIR/references/003-manual-migration-checklist-template.md"
+PYTHON_SCRIPT="$SCRIPT_DIR/generate_migration_plan.py"
+TEMPLATE_PATH="$SKILL_DIR/references/003-manual-migration-plan-template.md"
 
 if [ "$#" -lt 1 ]; then
-  echo "Usage: sh scripts/run_migration_checklist.sh <source-root> [--output <target-markdown>] [--title <title>] [--force-fallback]" >&2
+  echo "Usage: sh scripts/run_migration_plan.sh <source-root> [--output <target-markdown>] [--title <title>] [--force-fallback]" >&2
   exit 2
 fi
 
 SOURCE_ROOT=$1
 shift
 OUTPUT=""
-TITLE="Legacy Documentation Migration Checklist"
+TITLE="Legacy Documentation Migration Plan"
 FORCE_FALLBACK=0
 
 while [ "$#" -gt 0 ]; do
@@ -73,12 +73,12 @@ if PYTHON_CMD=$(find_python); then
   exit 0
 fi
 
-echo "Python runtime not detected. Falling back to the manual migration checklist template." >&2
+echo "Python runtime not detected. Falling back to the manual migration plan template." >&2
 
 if [ -n "$OUTPUT" ]; then
   mkdir -p "$(dirname "$OUTPUT")"
   render_template > "$OUTPUT"
-  printf '%s\n' "Wrote manual fallback checklist to $OUTPUT"
+  printf '%s\n' "Wrote manual fallback plan to $OUTPUT"
 else
   render_template
 fi

@@ -57,7 +57,7 @@ This helps separate:
 When one research document starts mixing too many jobs:
 
 - move stable factual material into `reference`
-- keep provisional recommendations in `discuss`
-- move next actions into `todolist`
+- keep pre-execution requirement questions and unresolved recommendation debate in `discuss`
+- move durable execution work into `plan`, and keep very short-lived next actions in `TodoWrite` / `update_plan`
 
 Do not let one long research note become an all-purpose dump.

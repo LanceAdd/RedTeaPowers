@@ -1,6 +1,6 @@
 ---
 name: managing-project-docs
-description: Organize project documentation by purpose, numbering, and split strategy. Use when deciding whether to create or update guide, discuss, spec, plan, reference, change, archive, todolist, or scripts files, especially when documentation is becoming fragmented, overgrown, or hard to navigate.
+description: Organize project documentation by purpose, numbering, and split strategy. Use when deciding whether to create or update guide, discuss, spec, plan, reference, change, archive, or scripts files, especially when documentation is becoming fragmented, overgrown, or hard to navigate.
 ---
 
 # Managing Project Docs
@@ -23,7 +23,7 @@ If the task is converting a legacy documentation set into this taxonomy, use `mi
 ## Core Rules
 
 - Do not create a document whose only job is to satisfy ceremony.
-- Prefer `todolist` or a lightweight checklist for near-term actionable work.
+- Prefer session task tracking in `TodoWrite` or `update_plan` for near-term actionable work that does not need a durable document.
 - Use `spec` only for approved target behavior and boundaries.
 - Use `plan` only for executable implementation sequencing.
 - Move reference material out of spec and plan when it starts crowding them.
@@ -34,14 +34,13 @@ If the task is converting a legacy documentation set into this taxonomy, use `mi
 
 | Type | Purpose |
 |------|---------|
-| `guide` | Big-picture orientation, strategy, or development outline |
-| `discuss` | Unapproved ideas, requirement discussions, and provisional notes |
+| `guide` | Stage-level development charter or phased development outline |
+| `discuss` | Pre-execution requirement discussion, open questions, and alternative proposals that are not entering implementation yet |
 | `spec` | Approved behavior, boundaries, and decisions |
 | `plan` | Actionable implementation steps |
 | `reference` | Facts, schemas, API details, and lookup material |
 | `change` | Per-round change log and decision trail |
 | `archive` | Inactive but still valuable material |
-| `todolist` | Current queue, prerequisites, and next actions |
 | `scripts` | Reusable helper scripts for build, test, run, or maintenance work |
 
 ## Output
@@ -49,8 +48,8 @@ If the task is converting a legacy documentation set into this taxonomy, use `mi
 When documentation is needed, produce a short decision like:
 
 ```text
-Create: docs/todolist/003-settings-cleanup.md
-Why: four related tasks need a shared queue, but no formal spec or plan
+Create: docs/plan/003-settings-cleanup.md
+Why: four related implementation steps need durable sequencing across sessions
 Linked from: docs/change/012-april-ui-pass.md
 ```
 

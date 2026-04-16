@@ -13,7 +13,6 @@ Prefer this structure inside the project:
 - `docs/reference/`
 - `docs/change/`
 - `docs/archive/`
-- `docs/todolist/`
 - `scripts/`
 
 Rename the folders only when the project already has a stronger convention.
@@ -22,19 +21,19 @@ Rename the folders only when the project already has a stronger convention.
 
 ### guide
 
-Use for orientation and direction:
-- Development outline
-- Topic map
-- Shared principles
-- "How this area works" material
+Use for stage-level development guidance:
+- Phase or stage development charter
+- Development outline for the current delivery stage
+- Stage-specific working principles
+- Bounded development direction that should steer the next execution phase
 
 ### discuss
 
-Use for material that is not yet approved:
-- Requirement discussion
-- Open questions
-- Alternative proposals
-- Notes that may later become a spec
+Use for material that is not yet entering execution:
+- Requirement discussion before execution
+- Open questions blocking commitment
+- Alternative proposals under evaluation
+- Notes that may later become a `spec` once the team decides to execute
 
 ### spec
 
@@ -54,8 +53,9 @@ Use for execution:
 - Ordered steps
 - Milestones
 - Dependencies between tasks
+- Durable batch execution notes that should persist across sessions
 
-Do not use `plan` when a short checklist or todolist is enough.
+Do not use `plan` when direct execution or session task tracking in `TodoWrite` / `update_plan` is enough.
 
 ### reference
 
@@ -79,14 +79,6 @@ Use for materials that are no longer active but should stay searchable:
 - Finished stage summaries
 - Outdated but historically useful discussions
 
-### todolist
-
-Use for active operational work:
-- Near-term tasks
-- Preconditions
-- Open blockers
-- Batched issue lists
-
 ### scripts
 
 Use for reusable helpers:
@@ -99,9 +91,13 @@ Use for reusable helpers:
 
 If the material answers "what are we doing?" use `spec`.
 
+If it answers "what are we still discussing before deciding to execute?" use `discuss`.
+
+If it answers "what development charter are we following in this phase?" use `guide`.
+
 If it answers "how will we do it?" use `plan`.
 
-If it answers "what should we do next?" use `todolist`.
+If it answers "what should we do next right now in this session?" use session task tracking in `TodoWrite` or `update_plan`, not a document type.
 
 If it answers "what changed?" use `change`.
 

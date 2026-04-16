@@ -20,7 +20,7 @@ Use these rules by default unless a clear exception applies:
 - Use a small convergence budget:
   ask only the questions that would change the route, and usually no more than 1-3 in one round
 - Create at most one new active artifact before implementation starts
-- If 3 or more same-kind low-risk items are visible, default to a batch checklist instead of separate loops
+- If 3 or more same-kind low-risk items are visible, default to direct execution with `TodoWrite` / `update_plan` instead of separate loops
 - Use a thin first slice only to open the topic, then convert the remaining same-kind work into a batch within the next 1-2 rounds if the direction is now clear
 - Exceed these defaults only when requirements are unstable, architectural choices are expensive to reverse, or risk is unusually high
 
@@ -46,12 +46,12 @@ Use when:
 - expected behavior is already clear
 - documentation would mostly restate obvious work
 
-### Batch checklist
+### Direct execution with session task tracking
 
 Use when:
 - several same-kind small issues belong together
 - splitting them would waste setup time
-- one active queue is enough
+- one active session task list is enough
 - 3 or more same-kind low-risk items are already visible
 
 ### Formal plan
@@ -97,14 +97,14 @@ Choose the lightest strategy that guards the real risk:
 
 Use the document type that matches the job:
 
-- `guide` for orientation and development outline
-- `discuss` for provisional decisions and unapproved ideas
+- `guide` for a stage-level development charter or phased development outline
+- `discuss` for pre-execution requirement discussion and unapproved alternatives
 - `spec` for approved behavior
 - `plan` for executable implementation sequencing
 - `reference` for lookup material
 - `change` for per-round change records
 - `archive` for inactive but useful history
-- `todolist` for active next actions
+- session task tracking in `TodoWrite` / `update_plan` for active next actions that do not need a durable document
 
 All project documents should be read and written as UTF-8 text.
 
@@ -112,7 +112,7 @@ All project documents should be read and written as UTF-8 text.
 
 Avoid:
 - writing a spec just because a topic exists
-- writing a plan when a checklist would do
+- writing a plan when session task tracking would do
 - forcing TDD onto visual or exploratory work
 - spending multiple rounds on clarification that no longer changes the route
 - turning every visible same-kind task into its own tiny loop
