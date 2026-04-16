@@ -1,0 +1,27 @@
+RedTeaPowers Character Icon
+
+Primary
+
+   (( 
+  ))  
+[ R>T ]
+
+Compact
+
+[R>T]
+
+Tiny
+
+R>T
+
+Meaning
+
+- (( and )) suggest tea steam, warmth, and momentum
+- R>T suggests RedTea, routing, terminal-style prompts, and forward motion
+- [ ] suggests a package shell, command surface, or tool boundary
+
+Usage Notes
+
+- Prefer the primary mark in README headers, terminal splash text, and repo overviews
+- Prefer the compact mark in labels, prompts, or short status displays
+- Prefer ASCII-only contexts for maximum compatibility
