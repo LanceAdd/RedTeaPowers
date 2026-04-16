@@ -12,225 +12,150 @@
       ╰───────────╯__/
 ```
 
-RedTeaPowers is a curated skill library for structured software work with lighter process by default.
+RedTeaPowers is a curated skill library for structured software work that keeps useful discipline while stripping out process drag.
 
-## Overview
+It was rebuilt from the original `superpowers` ecosystem for teams who still want structure, but do not want to pay for it with slow momentum, endless micro-loops, or document sprawl.
 
-RedTeaPowers started from the original `superpowers` ecosystem, then was selectively rebuilt into a cleaner, more execution-oriented package.
+## Why RedTeaPowers
 
-It keeps the parts of process that actually help:
+Many process-heavy development systems fail in the same predictable ways:
 
-- work shaping
+- too much convergence before implementation
+- too many mandatory `spec` and `plan` artifacts
+- too many one-problem-one-loop passes
+- silent TDD pressure where other validation would fit better
+- weak document taxonomy that pushes everything into the same buckets
+
+RedTeaPowers keeps the useful parts:
+
+- work shaping before blind execution
 - explicit validation choices
-- durable documentation when it is truly useful
-- repeatable execution workflows
+- durable documentation when it is genuinely valuable
+- repeatable execution and completion workflows
 
-and pushes back on the parts that often slow teams down:
+and changes the defaults that usually slow teams down.
 
-- mandatory brainstorm -> spec -> plan chains
-- excessive convergence before implementation
-- one-problem-one-loop fragmentation
-- silent TDD defaults
-- document sprawl without taxonomy
+## What It Optimizes For
 
-## Why Build This Instead Of Continuing With Superpowers
+RedTeaPowers is designed for:
 
-RedTeaPowers exists because simply continuing to use the original `superpowers` defaults would keep reintroducing the same delivery problems.
-
-In practice, the old flow was strong in structure but too easy to over-apply. Teams could end up spending too much time converging before coding, too much time writing process artifacts, and too little time turning one opened topic into fast, meaningful progress.
-
-RedTeaPowers was built to keep the useful discipline while changing the default operating behavior.
-
-## Pain Points It Solves
-
-- Over-convergence before implementation. Small and medium tasks could get trapped in too much clarification, too many tiny slices, or too much speculative structure before real delivery started.
-- Forced `spec` and `plan` writing. Process artifacts were too easy to produce by habit even when a checklist or direct execution was enough.
-- Weak document taxonomy. Important information was too likely to collapse into only `spec` and `plan`, which made document systems harder to navigate and easier to fragment.
-- Silent TDD pressure. TDD could become the assumed answer even when the work was visual, exploratory, integration-heavy, or otherwise a poor fit.
-- One-problem-one-loop execution. Same-kind low-risk issues were too easy to split into many tiny passes instead of being handled as one efficient batch.
-- Poor transition from first slice to real momentum. A thin opening slice is useful, but without a rule to batch soon after, teams can stay stuck in endless micro-progress.
-- Encoding inconsistency in docs. Without an explicit rule, project documents can drift into mixed encodings and become harder to process reliably.
-
-In short, RedTeaPowers is for teams who still want structure, but want that structure to accelerate delivery instead of slowing it down.
+- lighter process by default
+- faster batch delivery after the mainline stabilizes
+- evidence before claims
+- documentation with clear purpose
+- UTF-8 consistency across project documents
 
 ## Core Defaults
 
-RedTeaPowers follows these defaults:
-
 1. Start with the lightest workflow that preserves clarity and safety.
-2. Shape the work before writing process artifacts.
-3. If 3 or more same-kind low-risk items are visible, batch them by default.
-4. Use a thin first slice only to open uncertainty, then move into batch progress quickly.
-5. Choose the cheapest validation strategy that protects the real risk.
+2. Shape the work before producing process artifacts.
+3. When 3 or more same-kind low-risk items are visible, batch them by default.
+4. Use a thin first slice only to open uncertainty, then move into meaningful batch progress.
+5. Choose validation by real risk, not by habit.
 6. Read and write all project documents as UTF-8 text.
 
-## Included Skills
+## Workflow At A Glance
 
-Workflow and routing:
+```text
+route -> research if facts are missing -> design only if needed -> plan only if needed -> execute -> verify -> finish
+```
+
+Recommended entry points:
+
+1. `using-redteapowers` for top-level routing
+2. `shaping-work` to choose direct execution, checklist, plan, or spec-plus-plan
+3. `researching-and-collecting` when the next blocker is missing facts, inventory, or comparison work
+4. `choosing-test-strategy` before locking in validation
+5. `managing-project-docs` when deciding what artifact should exist
+
+## Skill Map
+
+| Area | Skills |
+|------|--------|
+| Routing and shaping | `using-redteapowers`, `shaping-work`, `researching-and-collecting`, `brainstorming` |
+| Planning and execution | `writing-plans`, `executing-plans`, `subagent-driven-development` |
+| Validation and debugging | `choosing-test-strategy`, `test-driven-development`, `systematic-debugging`, `verification-before-completion` |
+| Documentation and migration | `managing-project-docs`, `migrating-project-docs` |
+| Review and branch flow | `requesting-code-review`, `receiving-code-review`, `using-git-worktrees`, `finishing-a-development-branch` |
+
+## What Changed From Superpowers
+
+RedTeaPowers is not just a rename. It changes the operating behavior of the original library.
+
+| Old tendency | RedTeaPowers default |
+|--------------|----------------------|
+| `brainstorm -> spec -> plan -> execute` by habit | route first, then add only the next layer that materially helps |
+| heavy requirement convergence up front | small convergence budget with explicit stop rules |
+| `spec` and `plan` as default document outcomes | broader doc taxonomy with `guide`, `discuss`, `reference`, `todolist`, `change`, `archive`, and `scripts` |
+| silent TDD-first behavior | choose validation first, use TDD only when it actually fits |
+| one tiny loop per visible issue | batch same-kind low-risk follow-up work |
+| thin first slice forever | open the topic, then stabilize into efficient delivery |
+
+## Included In The Current Package
+
+The active package currently includes:
 
 - `using-redteapowers`
 - `shaping-work`
 - `researching-and-collecting`
+- `choosing-test-strategy`
+- `managing-project-docs`
+- `migrating-project-docs`
 - `brainstorming`
 - `writing-plans`
 - `executing-plans`
-
-Validation and debugging:
-
-- `choosing-test-strategy`
-- `test-driven-development`
+- `subagent-driven-development`
 - `systematic-debugging`
 - `verification-before-completion`
-
-Documentation and collaboration:
-
-- `managing-project-docs`
-- `migrating-project-docs`
+- `using-git-worktrees`
 - `requesting-code-review`
 - `receiving-code-review`
-- `subagent-driven-development`
-
-Supporting skills:
-
-- `using-git-worktrees`
 - `finishing-a-development-branch`
+- `test-driven-development`
 
-## What Changed From The Original Superpowers
+See [PACKAGE.md](PACKAGE.md) for the packaged skill set and [using-redteapowers/references/library-status-matrix.md](using-redteapowers/references/library-status-matrix.md) for keep, rewrite, and archive decisions.
 
-RedTeaPowers is not just a rename. It changes the operating defaults of the original library.
+## Quick Start
 
-### 1. Workflow Is Routed, Not Forced
-
-Old instinct:
-
-```text
-brainstorm -> spec -> plan -> execute
-```
-
-RedTeaPowers default:
-
-```text
-route -> shape -> add only the next layer that materially helps
-```
-
-That means direct execution, batch checklist, lightweight plan, and spec-plus-plan are all valid routes depending on task shape.
-
-### 2. Demand Convergence Is Explicitly Guarded
-
-RedTeaPowers adds anti-over-convergence rules:
-
-- use a small convergence budget by default
-- ask only the questions that would change the route
-- avoid creating more than one active artifact before implementation starts
-- batch same-kind low-risk issues when they are already visible
-- avoid staying in endless tiny-slice mode after the topic is understood
-
-### 3. Spec And Plan Are No Longer Universal Defaults
-
-In RedTeaPowers:
-
-- `spec` is for approved behavior and boundaries
-- `plan` is for executable sequencing
-- `todolist` is the default home for active near-term work when a formal plan is unnecessary
-- `guide`, `discuss`, `reference`, `change`, and `archive` are first-class document types
-
-### 4. TDD Is A Strategy, Not A Doctrine
-
-The original ecosystem often leaned toward implicit TDD-first behavior.
-
-RedTeaPowers requires choosing a validation strategy first:
-
-- TDD
-- regression test
-- integration check
-- manual verification
-- exploration first
-
-TDD is still supported, but only when it is actually the right fit.
-
-### 5. Documentation Taxonomy Was Expanded
-
-Instead of centering nearly everything around `spec` and `plan`, RedTeaPowers formalizes a broader doc system:
-
-- `guide`
-- `discuss`
-- `spec`
-- `plan`
-- `reference`
-- `change`
-- `archive`
-- `todolist`
-- `scripts`
-
-### 6. Naming, Namespace, And Paths Were Reworked
-
-- `using-superpowers` -> `using-redteapowers`
-- `superpowers:skill-name` -> `redteapowers:skill-name`
-- `.superpowers/` -> `.redteapowers/`
-- `~/.config/superpowers/...` -> `~/.config/redteapowers/...`
-
-### 7. Historical Material Was Curated Instead Of Left Active
-
-This package is intentionally selective. Not every original top-level skill was carried forward into the default active library.
-
-### 8. Some Skill Boundaries Were Renamed Or Reframed
-
-- `using-superpowers` was replaced by `using-redteapowers`
-- agent-dispatch workflow ideas were kept, but the active packaged skill is framed as `subagent-driven-development`
-- review prompts were updated to fit the newer scope-first model instead of rigid spec-centric assumptions
-- only the current packaged working set stays active by default
-
-## Repository Layout
-
-- `README.md` is the English repository overview
-- `README.zh-CN.md` is the Chinese repository overview
-- `PACKAGE.md` describes the packaged skill set
-- each top-level directory is a skill
-- `agents/openai.yaml` provides UI-facing metadata where present
-- `references/` holds load-on-demand guidance
-- `scripts/` holds reusable helper scripts where needed
-- `assets/` holds reusable presentation assets such as the character icon
-
-## How To Use
-
-Use as a git repository:
+Clone the repository:
 
 ```powershell
 git clone git@github.com:LanceAdd/RedTeaPowers.git
 ```
 
-Use as a Codex skill library by installing or copying the skill folders into:
+Install the skill folders into your Codex skills directory:
 
 ```text
 ~/.codex/skills
 ```
 
-On this machine, that path is typically:
+On this machine that path is typically:
 
 ```text
 C:\Users\lanceadd\.codex\skills
 ```
 
-`PACKAGE.md` is useful as repository and package documentation, but it is not required for Codex runtime discovery.
+`PACKAGE.md` is useful package documentation, but it is not required for runtime skill discovery.
 
-## Recommended Entry Points
+## Repository Layout
 
-1. Use `using-redteapowers` for top-level routing.
-2. Use `shaping-work` to choose between direct execution, checklist, plan, or spec-plus-plan.
-3. Use `researching-and-collecting` when the next blocker is missing facts, source gathering, or comparison work.
-4. Use `choosing-test-strategy` before locking in validation.
-5. Use `managing-project-docs` when deciding what kind of artifact should exist.
+- `README.md` is the English overview
+- `README.zh-CN.md` is the Chinese overview
+- `PACKAGE.md` describes the packaged active skill set
+- each top-level directory is a skill
+- `agents/openai.yaml` holds UI-facing metadata where present
+- `references/` holds load-on-demand guidance
+- `scripts/` holds reusable helper scripts where needed
+- `assets/` holds reusable presentation assets
 
 ## Migration Notes
 
-If you are migrating an older `superpowers` setup, start here:
+If you are moving from an older `superpowers` setup, start here:
 
-- `using-redteapowers/references/migrating-from-superpowers.md`
-- `using-redteapowers/references/workflow-overview.md`
-- `using-redteapowers/references/library-status-matrix.md`
+- [using-redteapowers/references/migrating-from-superpowers.md](using-redteapowers/references/migrating-from-superpowers.md)
+- [using-redteapowers/references/workflow-overview.md](using-redteapowers/references/workflow-overview.md)
+- [using-redteapowers/references/library-status-matrix.md](using-redteapowers/references/library-status-matrix.md)
 
-## Encoding Policy
+## Project Rule
 
 All project documents should be read and written as UTF-8 text.
-
-This is a project rule, not a suggestion.
