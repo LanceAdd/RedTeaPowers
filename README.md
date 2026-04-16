@@ -70,6 +70,7 @@ Workflow and routing:
 
 - `using-redteapowers`
 - `shaping-work`
+- `researching-and-collecting`
 - `brainstorming`
 - `writing-plans`
 - `executing-plans`
@@ -216,8 +217,9 @@ C:\Users\lanceadd\.codex\skills
 
 1. Use `using-redteapowers` for top-level routing.
 2. Use `shaping-work` to choose between direct execution, checklist, plan, or spec-plus-plan.
-3. Use `choosing-test-strategy` before locking in validation.
-4. Use `managing-project-docs` when deciding what kind of artifact should exist.
+3. Use `researching-and-collecting` when the next blocker is missing facts, source gathering, or comparison work.
+4. Use `choosing-test-strategy` before locking in validation.
+5. Use `managing-project-docs` when deciding what kind of artifact should exist.
 
 ## Migration Notes
 

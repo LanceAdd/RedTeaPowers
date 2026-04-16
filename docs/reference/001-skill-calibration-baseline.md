@@ -40,7 +40,7 @@ Check every skill against these dimensions:
 
 ## Recommended Review Order
 
-1. Core routing chain: `using-redteapowers`, `shaping-work`, `brainstorming`, `choosing-test-strategy`, `writing-plans`, `executing-plans`
+1. Core routing chain: `using-redteapowers`, `shaping-work`, `researching-and-collecting`, `brainstorming`, `choosing-test-strategy`, `writing-plans`, `executing-plans`
 2. Completion and quality gates: `systematic-debugging`, `verification-before-completion`, `finishing-a-development-branch`
 3. Documentation layer: `managing-project-docs`, `migrating-project-docs`
 4. Collaboration and execution helpers: `subagent-driven-development`, `using-git-worktrees`, `requesting-code-review`, `receiving-code-review`

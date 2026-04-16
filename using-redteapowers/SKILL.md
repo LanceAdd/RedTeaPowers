@@ -1,6 +1,6 @@
 ---
 name: using-redteapowers
-description: Use when starting any conversation that may involve RedTeaPowers workflows. Route the request to the lightest useful process skill first when deciding whether work needs shaping, debugging, planning, documentation, or a specific test strategy, and skip extra process when direct execution is already clear.
+description: Use when starting any conversation that may involve RedTeaPowers workflows. Route the request to the lightest useful process skill first when deciding whether work needs shaping, research, debugging, planning, documentation, or a specific test strategy, and skip extra process when direct execution is already clear.
 ---
 
 <SUBAGENT-STOP>
@@ -30,12 +30,13 @@ Choose process skills in this order:
 
 1. `systematic-debugging` for bugs, failures, and unexpected behavior
 2. `shaping-work` for new work, mixed requests, batching decisions, or "do we need spec/plan?" questions when the right level of structure is still unclear
-3. `brainstorming` only when the work actually needs collaborative design and decision-making
-4. `managing-project-docs` when deciding which document type to create or update
-5. `migrating-project-docs` when legacy project documents need conversion into the RedTeaPowers taxonomy
-6. `choosing-test-strategy` when validation is not already obvious or before writing a plan that depends on the validation mode
-7. `writing-plans` only when the chosen route needs a formal plan or a multi-step execution artifact beyond a simple todolist
-8. `test-driven-development` only when TDD was explicitly chosen or clearly requested
+3. `researching-and-collecting` when the next blocker is factual research, source gathering, inventory, or comparison across the current project, local references, or external sources rather than design discussion
+4. `brainstorming` only when the work actually needs collaborative design and decision-making
+5. `managing-project-docs` when deciding which document type to create or update
+6. `migrating-project-docs` when legacy project documents need conversion into the RedTeaPowers taxonomy
+7. `choosing-test-strategy` when validation is not already obvious or before writing a plan that depends on the validation mode
+8. `writing-plans` only when the chosen route needs a formal plan or a multi-step execution artifact beyond a simple todolist
+9. `test-driven-development` only when TDD was explicitly chosen or clearly requested
 
 ## Decision Flow
 
@@ -48,6 +49,8 @@ digraph skill_flow {
     "Use systematic-debugging" [shape=box];
     "Needs work routing?" [shape=diamond];
     "Use shaping-work" [shape=box];
+    "Needs factual research?" [shape=diamond];
+    "Use researching-and-collecting" [shape=box];
     "Needs collaborative design?" [shape=diamond];
     "Use brainstorming" [shape=box];
     "Needs document decision?" [shape=diamond];
@@ -66,8 +69,11 @@ digraph skill_flow {
     "Bug or failure?" -> "Needs work routing?" [label="no"];
     "Use systematic-debugging" -> "Execute work";
     "Needs work routing?" -> "Use shaping-work" [label="yes"];
-    "Needs work routing?" -> "Needs collaborative design?" [label="no"];
-    "Use shaping-work" -> "Needs collaborative design?";
+    "Needs work routing?" -> "Needs factual research?" [label="no"];
+    "Use shaping-work" -> "Needs factual research?";
+    "Needs factual research?" -> "Use researching-and-collecting" [label="yes"];
+    "Needs factual research?" -> "Needs collaborative design?" [label="no"];
+    "Use researching-and-collecting" -> "Needs collaborative design?";
     "Needs collaborative design?" -> "Use brainstorming" [label="yes"];
     "Needs collaborative design?" -> "Needs document decision?" [label="no"];
     "Use brainstorming" -> "Needs document decision?";

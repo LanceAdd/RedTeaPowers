@@ -14,6 +14,7 @@ Use this matrix to track the current calibration state of the active RedTeaPower
 |-------|--------------|------------------------|--------|
 | `using-redteapowers` | entry router | keep routing order consistent with validation-first and light-process rules | `Aligned` |
 | `shaping-work` | route selector | preserve anti-fragmentation defaults and opened-topic stabilization rules | `Aligned` |
+| `researching-and-collecting` | factual discovery and synthesis | gather evidence and normalize findings before design or execution | `Aligned` |
 | `brainstorming` | design before implementation | keep collaborative design conditional instead of default ceremony | `Aligned` |
 | `choosing-test-strategy` | validation router | remain the source of truth for non-dogmatic validation choice | `Aligned` |
 | `writing-plans` | formal execution artifact writer | protect checklist-vs-plan boundary and keep validation explicit | `Aligned` |

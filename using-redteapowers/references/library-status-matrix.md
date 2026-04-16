@@ -16,6 +16,7 @@ All active documents and references should be read and written as UTF-8 text.
 |-----------|--------|-----|-------------|
 | `using-redteapowers` | Keep | Active entrypoint for the modernized routing model | Keep as the main onboarding skill |
 | `shaping-work` | Keep | New core routing skill that fixes over-scoping and fake granularity | Treat as a required top-level process skill |
+| `researching-and-collecting` | Keep | Fills the missing research, inventory, and evidence-synthesis layer before design or execution | Keep as the factual discovery and synthesis skill |
 | `choosing-test-strategy` | Keep | New core validation router | Keep and reference before TDD decisions |
 | `managing-project-docs` | Keep | New doc taxonomy and UTF-8 policy live here | Keep as the documentation control layer |
 | `brainstorming` | Keep | Rewritten to be conditional instead of mandatory | Keep, but only trigger when real design uncertainty exists |
@@ -46,6 +47,7 @@ If you are packaging a clean `RedTeaPowers` set, start with:
 
 - `using-redteapowers`
 - `shaping-work`
+- `researching-and-collecting`
 - `choosing-test-strategy`
 - `managing-project-docs`
 - `brainstorming`

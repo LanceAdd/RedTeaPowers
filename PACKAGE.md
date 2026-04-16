@@ -8,6 +8,7 @@ It includes only the top-level skills currently marked `Keep` in the source libr
 
 - `using-redteapowers`
 - `shaping-work`
+- `researching-and-collecting`
 - `choosing-test-strategy`
 - `managing-project-docs`
 - `migrating-project-docs`

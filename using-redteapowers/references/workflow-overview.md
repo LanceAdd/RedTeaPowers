@@ -28,13 +28,14 @@ Use these rules by default unless a clear exception applies:
 
 1. Route the work with `shaping-work`
 2. If the request is a bug or failure, use `systematic-debugging`
-3. If design decisions still matter, use `brainstorming`
-4. If documentation is needed, use `managing-project-docs`
-5. If legacy project documents need conversion, use `migrating-project-docs`
-6. If validation is not already obvious, choose it with `choosing-test-strategy`
-7. If implementation still needs a stable execution artifact, use `writing-plans`
-8. Use `test-driven-development` only when TDD is the chosen strategy
-9. Use `verification-before-completion` before any success claim
+3. If the next blocker is missing facts, inventory, or comparison work across the current project, local references, or external sources, use `researching-and-collecting`
+4. If design decisions still matter, use `brainstorming`
+5. If documentation is needed, use `managing-project-docs`
+6. If legacy project documents need conversion, use `migrating-project-docs`
+7. If validation is not already obvious, choose it with `choosing-test-strategy`
+8. If implementation still needs a stable execution artifact, use `writing-plans`
+9. Use `test-driven-development` only when TDD is the chosen strategy
+10. Use `verification-before-completion` before any success claim
 
 ## Work Shapes
 

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Researching And Collecting"
+  short_description: "Research across project, local, and external sources."
+  default_prompt: "Use $researching-and-collecting to gather facts from the current project, local references, or external sources, then compare and synthesize the findings into clear next-step recommendations."

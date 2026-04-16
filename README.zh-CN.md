@@ -70,6 +70,7 @@ RedTeaPowers 的默认规则是：
 
 - `using-redteapowers`
 - `shaping-work`
+- `researching-and-collecting`
 - `brainstorming`
 - `writing-plans`
 - `executing-plans`
