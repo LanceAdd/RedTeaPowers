@@ -9,6 +9,8 @@ description: Organize project documentation by purpose, numbering, and split str
 
 Create documentation only when it reduces confusion, preserves reusable decisions, or speeds up later work. Keep the system ordered enough to navigate without turning every small task into paperwork.
 
+If the task is converting a legacy documentation set into this taxonomy, use `migrating-project-docs` instead of treating the whole migration as a simple doc placement decision.
+
 ## Workflow
 
 1. Decide whether the work needs a document at all.

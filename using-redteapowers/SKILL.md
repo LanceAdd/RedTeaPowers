@@ -32,9 +32,10 @@ Choose process skills in this order:
 2. `shaping-work` for new work, mixed requests, batching decisions, or "do we need spec/plan?" questions when the right level of structure is still unclear
 3. `brainstorming` only when the work actually needs collaborative design and decision-making
 4. `managing-project-docs` when deciding which document type to create or update
-5. `writing-plans` only when the chosen route needs an implementation plan
-6. `choosing-test-strategy` before locking in validation or writing a plan that assumes TDD
-7. `test-driven-development` only when TDD was explicitly chosen or clearly requested
+5. `migrating-project-docs` when legacy project documents need conversion into the RedTeaPowers taxonomy
+6. `writing-plans` only when the chosen route needs an implementation plan
+7. `choosing-test-strategy` before locking in validation or writing a plan that assumes TDD
+8. `test-driven-development` only when TDD was explicitly chosen or clearly requested
 
 ## Decision Flow
 

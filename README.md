@@ -14,9 +14,6 @@
 
 RedTeaPowers is a curated skill library for structured software work with lighter process by default.
 
-Character icon asset:
-`assets/redteapowers-icon.txt`
-
 ## Overview
 
 RedTeaPowers started from the original `superpowers` ecosystem, then was selectively rebuilt into a cleaner, more execution-oriented package.
@@ -36,31 +33,25 @@ and pushes back on the parts that often slow teams down:
 - silent TDD defaults
 - document sprawl without taxonomy
 
-## Character Icon
+## Why Build This Instead Of Continuing With Superpowers
 
-Primary mark:
+RedTeaPowers exists because simply continuing to use the original `superpowers` defaults would keep reintroducing the same delivery problems.
 
-```text
-        )   )  (
-       (   (   ) )
-        )   ) ( (
-      ╭───────────╮
-      │ RedTea >  │__
-      │ Powers    │  )
-      ╰───────────╯__/
-```
+In practice, the old flow was strong in structure but too easy to over-apply. Teams could end up spending too much time converging before coding, too much time writing process artifacts, and too little time turning one opened topic into fast, meaningful progress.
 
-Compact mark:
+RedTeaPowers was built to keep the useful discipline while changing the default operating behavior.
 
-```text
-[RedTea>]
-```
+## Pain Points It Solves
 
-Meaning:
+- Over-convergence before implementation. Small and medium tasks could get trapped in too much clarification, too many tiny slices, or too much speculative structure before real delivery started.
+- Forced `spec` and `plan` writing. Process artifacts were too easy to produce by habit even when a checklist or direct execution was enough.
+- Weak document taxonomy. Important information was too likely to collapse into only `spec` and `plan`, which made document systems harder to navigate and easier to fragment.
+- Silent TDD pressure. TDD could become the assumed answer even when the work was visual, exploratory, integration-heavy, or otherwise a poor fit.
+- One-problem-one-loop execution. Same-kind low-risk issues were too easy to split into many tiny passes instead of being handled as one efficient batch.
+- Poor transition from first slice to real momentum. A thin opening slice is useful, but without a rule to batch soon after, teams can stay stuck in endless micro-progress.
+- Encoding inconsistency in docs. Without an explicit rule, project documents can drift into mixed encodings and become harder to process reliably.
 
-- the steam lines suggest tea, warmth, and momentum
-- `RedTea >` suggests terminal-style routing and forward movement
-- the cup body suggests a package shell, command surface, or tool boundary
+In short, RedTeaPowers is for teams who still want structure, but want that structure to accelerate delivery instead of slowing it down.
 
 ## Core Defaults
 
@@ -93,6 +84,7 @@ Validation and debugging:
 Documentation and collaboration:
 
 - `managing-project-docs`
+- `migrating-project-docs`
 - `requesting-code-review`
 - `receiving-code-review`
 - `subagent-driven-development`

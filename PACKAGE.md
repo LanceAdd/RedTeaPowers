@@ -10,6 +10,7 @@ It includes only the top-level skills currently marked `Keep` in the source libr
 - `shaping-work`
 - `choosing-test-strategy`
 - `managing-project-docs`
+- `migrating-project-docs`
 - `brainstorming`
 - `writing-plans`
 - `executing-plans`

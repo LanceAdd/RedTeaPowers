@@ -1,0 +1,4 @@
+interface:
+  display_name: "Migrating Project Docs"
+  short_description: "Convert legacy docs into the RedTeaPowers doc system."
+  default_prompt: "Use $migrating-project-docs to audit and migrate an existing project's legacy documents into the RedTeaPowers documentation system."
