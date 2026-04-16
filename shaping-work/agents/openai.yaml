@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shaping Work"
+  short_description: "Choose direct, batch, plan, or spec-plus-plan."
+  default_prompt: "Use $shaping-work to decide whether this request should be handled directly, as a batch, with a plan, or with a spec and plan."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Managing Project Docs"
+  short_description: "Choose doc types, numbering, and split rules."
+  default_prompt: "Use $managing-project-docs to choose the right project document type, numbering, and split strategy for this work."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Before Completion"
+  short_description: "Verify with fresh evidence before claiming success."
+  default_prompt: "Use $verification-before-completion to confirm this work with fresh evidence before claiming it is done."

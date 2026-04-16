@@ -1,0 +1,4 @@
+interface:
+  display_name: "Executing Plans"
+  short_description: "Execute plans or checklists with verification."
+  default_prompt: "Use $executing-plans to carry out this plan or checklist with fresh verification at each checkpoint."

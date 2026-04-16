@@ -1,0 +1,4 @@
+interface:
+  display_name: "Writing Plans"
+  short_description: "Write execution plans only when they are needed."
+  default_prompt: "Use $writing-plans to create the lightest useful implementation plan or execution checklist for this work."

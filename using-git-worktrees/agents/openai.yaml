@@ -1,0 +1,4 @@
+interface:
+  display_name: "Using Git Worktrees"
+  short_description: "Create isolated git worktrees with safety checks."
+  default_prompt: "Use $using-git-worktrees to create a safe isolated worktree before implementing this change."

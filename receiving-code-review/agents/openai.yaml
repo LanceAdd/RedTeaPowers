@@ -1,0 +1,4 @@
+interface:
+  display_name: "Receiving Code Review"
+  short_description: "Evaluate review feedback before changing code."
+  default_prompt: "Use $receiving-code-review to evaluate this code review feedback before applying any requested changes."

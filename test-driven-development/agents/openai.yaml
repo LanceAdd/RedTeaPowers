@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test-Driven Development"
+  short_description: "Use strict test-first development when chosen."
+  default_prompt: "Use $test-driven-development to implement this clear behavior with a strict red-green-refactor loop."

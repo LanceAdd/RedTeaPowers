@@ -1,0 +1,4 @@
+interface:
+  display_name: "Choosing Test Strategy"
+  short_description: "Choose TDD, regression, integration, or manual checks."
+  default_prompt: "Use $choosing-test-strategy to decide whether this task needs TDD, a regression test, an integration check, or manual verification."

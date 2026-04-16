@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brainstorming"
+  short_description: "Design uncertain work before implementation."
+  default_prompt: "Use $brainstorming to clarify this request, compare approaches, and decide whether it needs design work."

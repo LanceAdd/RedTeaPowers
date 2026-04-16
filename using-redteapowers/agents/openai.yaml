@@ -1,0 +1,4 @@
+interface:
+  display_name: "Using RedTeaPowers"
+  short_description: "Route work through the right RedTeaPowers skills."
+  default_prompt: "Use $using-redteapowers to route this request to the right RedTeaPowers workflow before acting."
