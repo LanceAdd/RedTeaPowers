@@ -15,6 +15,7 @@ Before using this skill, route the work with `shaping-work`. If validation strat
 ## First Decision: Plan Or Checklist
 
 Start by assuming a checklist or direct execution is enough. Escalate to a formal plan only when the work would be meaningfully harder to execute without one.
+If a first slice already proved the direction, plan the next meaningful batch instead of writing a plan around another tiny slice.
 
 Use a formal plan when:
 - The work spans multiple files, steps, or milestones
@@ -26,6 +27,7 @@ Use a checklist or todolist instead when:
 - The work is a batch of related small changes
 - The next actions are obvious
 - Fine-grained planning would cost more than it saves
+- The remaining same-kind work should simply be finished in one coordinated pass
 
 If a checklist is enough, hand off to `managing-project-docs` and store it under `docs/todolist/`.
 
@@ -39,6 +41,7 @@ Write plans for execution, not ceremony.
 - Include exact file paths, dependencies, and validation expectations.
 - Include only as much detail as the executor actually needs.
 - Prefer a few strong tasks with clear checkpoints over a wall of tiny steps.
+- Do not write a formal plan whose only purpose is to serialize obvious same-kind follow-up work.
 
 ## Document Location
 
@@ -117,7 +120,8 @@ After writing the plan:
 2. Check coverage against the requirements or spec.
 3. Check that task granularity supports momentum instead of slowing it down.
 4. Check that the validation section matches the chosen testing strategy.
-5. Split oversized plans only when readability truly suffers.
+5. Check that the plan is not preserving micro-slice behavior after the topic is already open.
+6. Split oversized plans only when readability truly suffers.
 
 ## Handoff
 

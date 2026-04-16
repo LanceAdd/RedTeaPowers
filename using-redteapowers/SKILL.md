@@ -14,6 +14,7 @@ Use the lightest skill flow that matches the work. The point of RedTeaPowers is 
 User instructions always win. If the user asks for a lighter or different process, follow that unless it would create obvious risk.
 
 If the request is already clear, low-risk, and ready to execute after a quick context check, stop routing and do the work.
+Use a small convergence budget by default: only enough clarification, documentation, and planning to change the route or protect against real risk.
 
 ## Core Rule
 
@@ -21,6 +22,7 @@ Check whether a skill materially helps before acting. If one clearly applies, us
 
 Do not force heavy process just because a skill exists.
 Do not keep routing once the next practical step is obvious.
+Do not exceed one round of low-value clarification or one active new document unless the work clearly justifies it.
 
 ## Routing Order
 
@@ -94,6 +96,9 @@ These thoughts mean stop and route more carefully:
 | "Every change needs a spec" | Specs are for alignment, not for routine paperwork. |
 | "Every implementation needs TDD" | TDD is one strategy, not the universal default. |
 | "The smallest closed loop is always best" | After uncertainty drops, batch related work and move faster. |
+| "We should keep asking or writing first" | Stop once more convergence would not change the route. |
+| "Let's fix each similar small issue one by one" | When 3 or more same-kind low-risk items are visible, batch them by default. |
+| "We opened the topic with one slice, so let's keep slicing" | A first slice should open the lane, not trap the work in micro-loops. |
 | "We should keep routing just to be safe" | Once the route is clear, execution is usually safer than more ceremony. |
 | "This skill is overkill, skip all skills" | Use the right skill, not necessarily the heaviest one. |
 

@@ -13,6 +13,17 @@ Do not assume every request needs:
 
 Start by shaping the work, then add only the process that reduces real risk.
 
+## Default Convergence Rules
+
+Use these rules by default unless a clear exception applies:
+
+- Use a small convergence budget:
+  ask only the questions that would change the route, and usually no more than 1-3 in one round
+- Create at most one new active artifact before implementation starts
+- If 3 or more same-kind low-risk items are visible, default to a batch checklist instead of separate loops
+- Use a thin first slice only to open the topic, then convert the remaining same-kind work into a batch within the next 1-2 rounds if the direction is now clear
+- Exceed these defaults only when requirements are unstable, architectural choices are expensive to reverse, or risk is unusually high
+
 ## Recommended Flow
 
 1. Route the work with `shaping-work`
@@ -39,6 +50,7 @@ Use when:
 - several same-kind small issues belong together
 - splitting them would waste setup time
 - one active queue is enough
+- 3 or more same-kind low-risk items are already visible
 
 ### Formal plan
 
@@ -85,6 +97,8 @@ Avoid:
 - writing a spec just because a topic exists
 - writing a plan when a checklist would do
 - forcing TDD onto visual or exploratory work
+- spending multiple rounds on clarification that no longer changes the route
+- turning every visible same-kind task into its own tiny loop
 - preserving fake momentum by slicing work smaller after uncertainty is already gone
 - mixing document encodings across the same project
 

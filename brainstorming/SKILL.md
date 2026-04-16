@@ -11,6 +11,7 @@ Clarify uncertain work before implementation. Use brainstorming to reduce ambigu
 
 Before using this skill, route the work with `shaping-work`. If the work is already understood well enough to execute directly or with a checklist, do that instead.
 If the key uncertainty disappears quickly, stop brainstorming and hand off immediately to execution or a todolist.
+Stay within a small convergence budget unless the topic has real decision risk.
 
 ## When To Use
 
@@ -28,12 +29,13 @@ Do not use this skill when:
 ## Process
 
 1. Explore project context first: files, docs, recent work, and constraints.
-2. Ask the minimum focused clarifying questions needed where uncertainty matters.
+2. Ask the minimum focused clarifying questions needed where uncertainty matters, usually no more than 1-3 in one round.
 3. Propose 2-3 approaches when the choice is non-obvious.
 4. Present a concise recommended direction.
 5. Choose the right artifact for the outcome: no doc, `discuss`, `guide`, `spec`, checklist, or direct handoff to planning or execution.
 
 Prefer the lightest outcome that preserves the useful decision.
+Prefer at most one new active artifact before execution starts.
 
 ## Output Choices
 
@@ -74,6 +76,7 @@ After brainstorming, choose the next step deliberately:
 - Favor one good decision over performative thoroughness.
 - Do not keep slicing work smaller after the topic is already understood.
 - Batch related follow-up work once the first slice opens the topic.
+- If the first slice settled the approach, move the remaining same-kind work into a batch within the next 1-2 rounds.
 - Prefer direct execution over another discussion round once the path is clear.
 - Keep outputs short unless the problem truly needs more structure.
 
