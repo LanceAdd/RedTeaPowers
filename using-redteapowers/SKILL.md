@@ -1,6 +1,6 @@
 ---
 name: using-redteapowers
-description: Use when starting any conversation that may involve RedTeaPowers workflows. Route the request to the right process skill first, especially when deciding whether work needs shaping, debugging, planning, documentation, or a specific test strategy.
+description: Use when starting any conversation that may involve RedTeaPowers workflows. Route the request to the lightest useful process skill first when deciding whether work needs shaping, debugging, planning, documentation, or a specific test strategy, and skip extra process when direct execution is already clear.
 ---
 
 <SUBAGENT-STOP>
@@ -13,18 +13,21 @@ Use the lightest skill flow that matches the work. The point of RedTeaPowers is 
 
 User instructions always win. If the user asks for a lighter or different process, follow that unless it would create obvious risk.
 
+If the request is already clear, low-risk, and ready to execute after a quick context check, stop routing and do the work.
+
 ## Core Rule
 
-Check whether a skill applies before acting. If one applies, use it. If multiple apply, route through the process skill that decides the shape of the work before loading heavier implementation workflows.
+Check whether a skill materially helps before acting. If one clearly applies, use it. If multiple apply, route through the process skill that decides the shape of the work before loading heavier implementation workflows.
 
 Do not force heavy process just because a skill exists.
+Do not keep routing once the next practical step is obvious.
 
 ## Routing Order
 
 Choose process skills in this order:
 
 1. `systematic-debugging` for bugs, failures, and unexpected behavior
-2. `shaping-work` for new work, mixed requests, batching decisions, or "do we need spec/plan?" questions
+2. `shaping-work` for new work, mixed requests, batching decisions, or "do we need spec/plan?" questions when the right level of structure is still unclear
 3. `brainstorming` only when the work actually needs collaborative design and decision-making
 4. `managing-project-docs` when deciding which document type to create or update
 5. `writing-plans` only when the chosen route needs an implementation plan
@@ -36,6 +39,8 @@ Choose process skills in this order:
 ```dot
 digraph skill_flow {
     "User message received" [shape=doublecircle];
+    "Clear enough to execute?" [shape=diamond];
+    "Execute work" [shape=doublecircle];
     "Bug or failure?" [shape=diamond];
     "Use systematic-debugging" [shape=box];
     "Needs work routing?" [shape=diamond];
@@ -50,9 +55,10 @@ digraph skill_flow {
     "Use choosing-test-strategy" [shape=box];
     "TDD selected?" [shape=diamond];
     "Use test-driven-development" [shape=box];
-    "Execute work" [shape=doublecircle];
 
-    "User message received" -> "Bug or failure?";
+    "User message received" -> "Clear enough to execute?";
+    "Clear enough to execute?" -> "Execute work" [label="yes"];
+    "Clear enough to execute?" -> "Bug or failure?" [label="no"];
     "Bug or failure?" -> "Use systematic-debugging" [label="yes"];
     "Bug or failure?" -> "Needs work routing?" [label="no"];
     "Use systematic-debugging" -> "Execute work";
@@ -88,6 +94,7 @@ These thoughts mean stop and route more carefully:
 | "Every change needs a spec" | Specs are for alignment, not for routine paperwork. |
 | "Every implementation needs TDD" | TDD is one strategy, not the universal default. |
 | "The smallest closed loop is always best" | After uncertainty drops, batch related work and move faster. |
+| "We should keep routing just to be safe" | Once the route is clear, execution is usually safer than more ceremony. |
 | "This skill is overkill, skip all skills" | Use the right skill, not necessarily the heaviest one. |
 
 ## Platform Adaptation

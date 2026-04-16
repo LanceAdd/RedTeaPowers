@@ -1,6 +1,6 @@
 ---
 name: writing-plans
-description: Use when work actually needs an implementation plan or execution checklist across multiple steps, files, or contributors. Do not use when direct execution or a lightweight todolist is enough, or when a plan would only restate obvious next actions.
+description: Use when work actually needs an implementation plan or execution checklist across multiple steps, files, or contributors. Default to a lightweight todolist for related small work, and do not use when direct execution is enough or a formal plan would only restate obvious next actions.
 ---
 
 # Writing Plans
@@ -8,10 +8,13 @@ description: Use when work actually needs an implementation plan or execution ch
 ## Overview
 
 Write a plan only when planning will reduce confusion, coordination cost, or execution risk. If a lightweight checklist is enough, do not inflate it into a formal plan.
+Default to the smallest artifact that keeps execution moving.
 
 Before using this skill, route the work with `shaping-work`. If validation strategy is not decided yet, use `choosing-test-strategy` before finalizing the plan.
 
 ## First Decision: Plan Or Checklist
+
+Start by assuming a checklist or direct execution is enough. Escalate to a formal plan only when the work would be meaningfully harder to execute without one.
 
 Use a formal plan when:
 - The work spans multiple files, steps, or milestones
@@ -31,6 +34,7 @@ If a checklist is enough, hand off to `managing-project-docs` and store it under
 Write plans for execution, not ceremony.
 
 - Group related work into meaningful tasks or batches.
+- Collapse same-kind low-risk fixes into one batch when they touch the same area.
 - Do not force every task into 2-5 minute micro-steps.
 - Include exact file paths, dependencies, and validation expectations.
 - Include only as much detail as the executor actually needs.
