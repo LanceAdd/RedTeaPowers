@@ -98,3 +98,4 @@ Skills use Claude Code tool names. Non-CC platforms: see `references/copilot-too
 
 - Read [workflow-overview.md](references/workflow-overview.md) for the modernized routing, validation, and documentation model.
 - Read [library-status-matrix.md](references/library-status-matrix.md) for the current keep, rewrite, and archive decisions across the library.
+- Read [migrating-from-superpowers.md](references/migrating-from-superpowers.md) when converting older superpowers-based workflows, docs, or prompts into RedTeaPowers.
