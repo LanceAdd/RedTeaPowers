@@ -64,6 +64,7 @@ Use for stable facts that people need to look up:
 - API notes
 - Rules
 - Glossaries
+- Durable technical design records that mainly explain architecture, interfaces, or data flow
 
 ### change
 

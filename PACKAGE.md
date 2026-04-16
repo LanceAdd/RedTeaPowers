@@ -1,8 +1,10 @@
 # RedTeaPowers Package
 
-This directory is the current clean product cut of the RedTeaPowers skill set.
+This repository is the current clean product cut of the RedTeaPowers skill set.
 
-It includes only the top-level skills currently marked `Keep` in the source library status matrix from the source reference library.
+The source skill directories now live under `skills/`.
+
+It includes only the skills currently marked `Keep` in the source library status matrix from the source reference library.
 
 ## Included Skills
 
@@ -27,5 +29,7 @@ It includes only the top-level skills currently marked `Keep` in the source libr
 ## Packaging Rules
 
 - Treat this directory as UTF-8 text by default for all documentation reads and writes.
+- Copy selected directories from `skills/` into the runtime Codex skills directory as flat installable skill folders.
+- Do not make runtime skill behavior depend on repository-root docs or files that will not ship inside the selected skill directories.
 - Keep archived or experimental skills out of this package unless they are explicitly promoted.
-- Use `using-redteapowers/references/library-status-matrix.md` in the source library when deciding future additions or removals.
+- Use `skills/using-redteapowers/references/library-status-matrix.md` in the source library when deciding future additions or removals.

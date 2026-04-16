@@ -121,4 +121,4 @@ Avoid:
 
 ## Packaging Reference
 
-Read [library-status-matrix.md](library-status-matrix.md) for the current keep, rewrite, and archive decisions across the top-level skill directories.
+Read [library-status-matrix.md](library-status-matrix.md) for the current keep, rewrite, and archive decisions across the source skill directories.

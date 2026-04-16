@@ -114,5 +114,6 @@ After saving the plan:
 
 ## References
 
+- Use [references/001-new-module-plan-template.md](references/001-new-module-plan-template.md) when planning implementation for a newly designed module or subsystem.
 - Use `../shaping-work/references/002-opened-topic-stabilization.md` when planning work that has already moved past the first slice.
 - Use [plan-document-reviewer-prompt.md](plan-document-reviewer-prompt.md) when the plan needs a focused review pass.

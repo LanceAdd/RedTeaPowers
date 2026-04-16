@@ -72,3 +72,4 @@ After routing:
 - Read [workflow-overview.md](references/workflow-overview.md) for the modernized routing, validation, and documentation model.
 - Read [library-status-matrix.md](references/library-status-matrix.md) for the current keep, rewrite, and archive decisions across the library.
 - Read [migrating-from-superpowers.md](references/migrating-from-superpowers.md) when converting older superpowers-based workflows, docs, or prompts into RedTeaPowers.
+- Read [../shaping-work/references/003-new-module-development-flow.md](../shaping-work/references/003-new-module-development-flow.md) when the user is opening a new module, subsystem, or capability and needs a serial flow from design into implementation.

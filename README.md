@@ -3,58 +3,44 @@
 [中文说明 / Chinese Version](README.zh-CN.md)
 
 ```text
-        )   )  (
-       (   (   ) )
-        )   ) ( (
-      ╭───────────╮
-      │ RedTea >  │__
-      │ Powers    │  )
-      ╰───────────╯__/
+    ____           __  ______              ____                            
+   / __ \___  ____/ / /_  __/__  ____ _   / __ \____ _      _____  __________
+  / /_/ / _ \/ __  /   / / / _ \/ __ `/  / /_/ / __ \ | /| / / _ \/ ___/ ___/
+ / _, _/  __/ /_/ /   / / /  __/ /_/ /  / ____/ /_/ / |/ |/ /  __/ /  (__  ) 
+/_/ |_|\___/\__,_/   /_/  \___/\__,_/  /_/    \____/|__/|__/\___/_/  /____/  
 ```
 
-RedTeaPowers is a curated skill library for structured software work that keeps useful discipline while stripping out process drag.
+> Structured software work, with less ceremony and better momentum.
 
-It was rebuilt from the original `superpowers` ecosystem for teams who still want structure, but do not want to pay for it with slow momentum, endless micro-loops, or document sprawl.
+## 🍵 What This Is
 
-## Why RedTeaPowers
+RedTeaPowers is a curated skill library for teams that still want engineering discipline, but do not want to pay for it with slow momentum, endless micro-loops, or document sprawl.
 
-Many process-heavy development systems fail in the same predictable ways:
-
-- too much convergence before implementation
-- too many mandatory `spec` and `plan` artifacts
-- too many one-problem-one-loop passes
-- silent TDD pressure where other validation would fit better
-- weak document taxonomy that pushes everything into the same buckets
-
-RedTeaPowers keeps the useful parts:
+It keeps the useful parts of process:
 
 - work shaping before blind execution
 - explicit validation choices
-- durable documentation when it is genuinely valuable
-- repeatable execution and completion workflows
+- durable documentation with clear purpose
+- disciplined execution, review, and completion
 
-and changes the defaults that usually slow teams down.
+It strips out the parts that usually become drag:
 
-## What It Optimizes For
+- mandatory `spec` and `plan` for every task
+- one-problem-one-loop behavior
+- silent TDD-by-default assumptions
+- vague documentation buckets that absorb everything
 
-RedTeaPowers is designed for:
+## ✨ Design Direction
 
-- lighter process by default
-- faster batch delivery after the mainline stabilizes
-- evidence before claims
-- documentation with clear purpose
-- UTF-8 consistency across project documents
+RedTeaPowers is opinionated in a few important ways:
 
-## Core Defaults
+- **Light by default**: start with the smallest safe workflow
+- **Sharp boundaries**: `discuss`, `guide`, `spec`, `plan`, `reference`, `change`, `archive` each do a different job
+- **Evidence first**: success claims require fresh verification
+- **Batch after clarity**: once the mainline is open, same-kind follow-up work should move in stronger passes
+- **Runtime realism**: skills should work after distribution, not only inside the source repo
 
-1. Start with the lightest workflow that preserves clarity and safety.
-2. Shape the work before producing process artifacts.
-3. When 3 or more same-kind low-risk items are visible, batch them by default.
-4. Use a thin first slice only to open uncertainty, then move into meaningful batch progress.
-5. Choose validation by real risk, not by habit.
-6. Read and write all project documents as UTF-8 text.
-
-## Workflow At A Glance
+## 🧭 Operating Model
 
 ```text
 route -> research if facts are missing -> design only if needed -> plan only if needed -> execute -> verify -> finish
@@ -62,13 +48,13 @@ route -> research if facts are missing -> design only if needed -> plan only if 
 
 Recommended entry points:
 
-1. `using-redteapowers` for top-level routing
-2. `shaping-work` to choose direct execution, session task tracking, plan, or spec-plus-plan
+1. `using-redteapowers` for top-level workflow routing
+2. `shaping-work` to choose direct execution, session task tracking, plan, or `spec + plan`
 3. `researching-and-collecting` when the next blocker is missing facts, inventory, or comparison work
 4. `choosing-test-strategy` before locking in validation
 5. `managing-project-docs` when deciding what artifact should exist
 
-## Skill Map
+## 🧩 Skill Constellation
 
 | Area | Skills |
 |------|--------|
@@ -78,33 +64,57 @@ Recommended entry points:
 | Documentation and migration | `managing-project-docs`, `migrating-project-docs` |
 | Review and branch flow | `requesting-code-review`, `receiving-code-review`, `using-git-worktrees`, `finishing-a-development-branch` |
 
-## What Changed From Superpowers
+## 🔄 From Superpowers To RedTeaPowers
 
-RedTeaPowers is not just a rename. It changes the operating behavior of the original library.
+This repo is not a rename. It is a reset of the operating defaults.
 
 | Old tendency | RedTeaPowers default |
 |--------------|----------------------|
 | `brainstorm -> spec -> plan -> execute` by habit | route first, then add only the next layer that materially helps |
-| heavy requirement convergence up front | small convergence budget with explicit stop rules |
-| `spec` and `plan` as default document outcomes | broader doc taxonomy with `guide`, `discuss`, `reference`, `change`, `archive`, and `scripts`, plus session task tracking in `TodoWrite` / `update_plan` |
+| heavy convergence up front | small convergence budget with explicit stop rules |
+| `spec` and `plan` as default document outcomes | broader taxonomy with `guide`, `discuss`, `reference`, `change`, `archive`, and `scripts`, plus session task tracking in `TodoWrite` / `update_plan` |
 | silent TDD-first behavior | choose validation first, use TDD only when it actually fits |
 | one tiny loop per visible issue | batch same-kind low-risk follow-up work |
-| thin first slice forever | open the topic, then stabilize into efficient delivery |
+| first-slice behavior kept too long | open the topic, then stabilize into efficient delivery |
 
-## Document Taxonomy Note
+## 📚 Document Taxonomy
 
-Two document types are easy to misuse unless their boundaries stay explicit:
+The repo now treats documentation as a deliberate system, not as generic notes.
 
-- `discuss` is for pre-execution requirement discussion, open questions, and alternatives while the work is not entering implementation yet
-- once the team decides to execute, the approved behavior and boundaries should move into `spec` instead of staying in `discuss`
-- `guide` is for a stage-level development charter or phased development outline
-- `guide` is not the default home for general explanatory material, architecture overview, or "how this area works" notes; those usually belong in `reference`
+Key boundaries:
 
-See [docs/reference/003-document-taxonomy-clarifications.md](docs/reference/003-document-taxonomy-clarifications.md) for the sharper boundary rules.
+- `discuss` is for pre-execution requirement discussion
+- `guide` is for stage-level development charter or phased development outline
+- `spec` is for approved behavior and boundaries
+- `plan` is for execution sequencing
+- `reference` is for lookup material and durable technical explanation
+- `change` is written after execution and review close
 
-## Included In The Current Package
+See:
 
-The active package currently includes:
+- [Document Taxonomy Clarifications](docs/reference/003-document-taxonomy-clarifications.md)
+
+## 🧱 New Module Work
+
+New modules need a sharper opening move than ordinary feature polish.
+
+Use:
+
+- [New Module Development Flow](skills/shaping-work/references/003-new-module-development-flow.md)
+- [New Module Spec Template](skills/brainstorming/references/001-new-module-spec-template.md)
+- [Module Design Record Template](skills/brainstorming/references/002-module-design-record-template.md)
+- [New Module Plan Template](skills/writing-plans/references/001-new-module-plan-template.md)
+
+This reflects the current project rule:
+
+1. keep requirements in `discuss` until execution is approved
+2. move approved behavior into `spec`
+3. place durable design explanation in `reference` when it would overcrowd the spec
+4. write `plan` only after the module shape is stable enough to execute
+
+## 📦 Current Active Package
+
+The current active package includes:
 
 - `using-redteapowers`
 - `shaping-work`
@@ -124,9 +134,36 @@ The active package currently includes:
 - `finishing-a-development-branch`
 - `test-driven-development`
 
-See [PACKAGE.md](PACKAGE.md) for the packaged skill set and [using-redteapowers/references/library-status-matrix.md](using-redteapowers/references/library-status-matrix.md) for keep, rewrite, and archive decisions.
+See:
 
-## Quick Start
+- [Package Overview](PACKAGE.md)
+- [Library Status Matrix](skills/using-redteapowers/references/library-status-matrix.md)
+
+## 🗂️ Repository Layout
+
+The repo now separates source-library structure from runtime installation shape.
+
+```text
+RedTeaPowers/
+├─ skills/    # source skill directories
+├─ docs/      # repo-level calibration and reference notes
+├─ assets/    # shared presentation assets
+├─ README.md
+├─ README.zh-CN.md
+└─ PACKAGE.md
+```
+
+Inside `skills/`, each subdirectory is one installable skill:
+
+```text
+skills/<skill-name>/
+├─ SKILL.md
+├─ agents/openai.yaml
+├─ references/
+└─ scripts/
+```
+
+## 🚀 Installation
 
 Clone the repository:
 
@@ -134,7 +171,7 @@ Clone the repository:
 git clone git@github.com:LanceAdd/RedTeaPowers.git
 ```
 
-Install the skill folders into your Codex skills directory:
+Copy the skill directories you want from `skills/` into your Codex skills directory:
 
 ```text
 ~/.codex/skills
@@ -146,27 +183,29 @@ On this machine that path is typically:
 C:\Users\lanceadd\.codex\skills
 ```
 
-`PACKAGE.md` is useful package documentation, but it is not required for runtime skill discovery.
+`PACKAGE.md` is useful package documentation, but runtime discovery depends on the individual skill folders.
 
-## Repository Layout
+## 🔧 Packaging Rule
 
-- `README.md` is the English overview
-- `README.zh-CN.md` is the Chinese overview
-- `PACKAGE.md` describes the packaged active skill set
-- each top-level directory is a skill
-- `agents/openai.yaml` holds UI-facing metadata where present
-- `references/` holds load-on-demand guidance
-- `scripts/` holds reusable helper scripts where needed
-- `assets/` holds reusable presentation assets
+This matters for how the repo is maintained now:
 
-## Migration Notes
+- source skills live under `skills/`
+- distributed skills are copied as flat sibling directories into the runtime skills folder
+- runtime skill behavior must not depend on repository-root files that will not ship with the selected skill directories
+
+In practice:
+
+- keep runtime references inside the skill itself
+- or use sibling-skill relative references that still exist after flat distribution
+
+## 🔁 Migration References
 
 If you are moving from an older `superpowers` setup, start here:
 
-- [using-redteapowers/references/migrating-from-superpowers.md](using-redteapowers/references/migrating-from-superpowers.md)
-- [using-redteapowers/references/workflow-overview.md](using-redteapowers/references/workflow-overview.md)
-- [using-redteapowers/references/library-status-matrix.md](using-redteapowers/references/library-status-matrix.md)
+- [Migrating From Superpowers](skills/using-redteapowers/references/migrating-from-superpowers.md)
+- [Workflow Overview](skills/using-redteapowers/references/workflow-overview.md)
+- [Library Status Matrix](skills/using-redteapowers/references/library-status-matrix.md)
 
-## Project Rule
+## 📝 Project Rule
 
 All project documents should be read and written as UTF-8 text.

@@ -38,4 +38,4 @@ Future calibration should be usage-driven:
 
 - revise a skill only when real use reveals routing drift, unnecessary ceremony, or reference bloat
 - keep `agents/openai.yaml` aligned whenever a skill body changes materially
-- rerun a focused calibration pass before adding new top-level skills or major workflow branches
+- rerun a focused calibration pass before adding new skill directories or major workflow branches

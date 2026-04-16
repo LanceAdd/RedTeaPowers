@@ -8,6 +8,8 @@ Keep the RedTeaPowers document taxonomy sharp enough that active work does not h
 
 The two document types most likely to blur are `discuss` and `guide`.
 
+Another common source of drift is where to place module-design material once execution is approved.
+
 ## discuss
 
 `discuss` is for pre-execution requirement discussion.
@@ -45,6 +47,19 @@ Do not use `guide` for:
 - stable lookup material that people revisit mainly for facts
 
 Those usually belong in `reference`.
+
+## Module Design Placement
+
+RedTeaPowers does not require a separate default `design` document type.
+
+For new-module work:
+
+- keep approved behavior, module boundary, and acceptance signals in `spec`
+- keep durable technical design explanation in `reference`
+- keep stage-wide direction in `guide`
+- keep execution sequencing in `plan`
+
+If a module design note mostly explains architecture, interfaces, or data flow, it should usually live in `reference`, not `guide`.
 
 ## Quick Selection Rule
 

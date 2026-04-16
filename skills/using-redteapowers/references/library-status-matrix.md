@@ -1,6 +1,6 @@
 # Library Status Matrix
 
-Use this matrix to decide which top-level skill directories stay in the active product, which still need another rewrite pass, and which can move out of the default package.
+Use this matrix to decide which source skill directories stay in the active product, which still need another rewrite pass, and which can move out of the default package.
 
 All active documents and references should be read and written as UTF-8 text.
 
@@ -10,12 +10,12 @@ All active documents and references should be read and written as UTF-8 text.
 - `Rewrite`: still valuable, but needs another pass before being treated as settled
 - `Archive candidate`: useful history or niche workflow, but should not ship as a default active skill unless you explicitly want it
 
-## Top-Level Directory Matrix
+## Source Skill Matrix
 
 | Directory | Status | Why | Next action |
 |-----------|--------|-----|-------------|
 | `using-redteapowers` | Keep | Active entrypoint for the modernized routing model | Keep as the main onboarding skill |
-| `shaping-work` | Keep | New core routing skill that fixes over-scoping and fake granularity | Treat as a required top-level process skill |
+| `shaping-work` | Keep | New core routing skill that fixes over-scoping and fake granularity | Treat as a required core process skill |
 | `researching-and-collecting` | Keep | Fills the missing research, inventory, and evidence-synthesis layer before design or execution | Keep as the factual discovery and synthesis skill |
 | `choosing-test-strategy` | Keep | New core validation router | Keep and reference before TDD decisions |
 | `managing-project-docs` | Keep | New doc taxonomy and UTF-8 policy live here | Keep as the documentation control layer |
@@ -35,7 +35,7 @@ All active documents and references should be read and written as UTF-8 text.
 
 ## Support Material Notes
 
-These are not top-level skills, but they matter for packaging:
+These are not source skill directories, but they matter for packaging:
 
 - `systematic-debugging/archive/` is already archived history and should stay out of the active workflow surface
 - historical creation logs should live under `archive/`, not beside active skill instructions

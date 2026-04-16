@@ -21,6 +21,7 @@ Use this skill when:
 - the request may be getting over-scoped into too much documentation
 - several related small fixes should probably be grouped into one workstream
 - you need to decide whether the work should be executed directly, tracked in `TodoWrite` / `update_plan`, planned, or specified
+- you need to open a new module or subsystem and choose whether it needs `discuss`, `guide`, `spec`, or `plan`
 
 ## Do Not Use When
 
@@ -105,3 +106,4 @@ After shaping:
 
 - Read [001-work-sizing-and-routing.md](references/001-work-sizing-and-routing.md) for the sizing signals, route examples, and escalation rules.
 - Read [002-opened-topic-stabilization.md](references/002-opened-topic-stabilization.md) for switching from first-slice work into batch delivery and stable system building.
+- Read [references/003-new-module-development-flow.md](references/003-new-module-development-flow.md) when the work is a new module or subsystem rather than a small bounded change.

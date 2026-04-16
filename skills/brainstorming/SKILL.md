@@ -72,5 +72,7 @@ After brainstorming:
 
 ## References
 
+- Use [references/001-new-module-spec-template.md](references/001-new-module-spec-template.md) when a new module now needs a formal `spec`.
+- Use [references/002-module-design-record-template.md](references/002-module-design-record-template.md) when module-design detail deserves a separate `reference` document before planning.
 - Use [visual-companion.md](visual-companion.md) when mockups, diagrams, or visual options would clarify the discussion better than plain text.
 - Use [spec-document-reviewer-prompt.md](spec-document-reviewer-prompt.md) when a spec draft needs focused review.
