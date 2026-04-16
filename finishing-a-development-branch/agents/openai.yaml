@@ -1,4 +1,4 @@
 interface:
   display_name: "Finish Development Branch"
-  short_description: "Finish work with merge, PR, or cleanup choices."
-  default_prompt: "Use $finishing-a-development-branch to finish this branch with verified options for merge, PR, or cleanup."
+  short_description: "Finish a verified branch with merge, PR, keep, or discard choices."
+  default_prompt: "Use $finishing-a-development-branch after verification to finish this branch with clear merge, PR, keep, or discard options."

@@ -1,4 +1,4 @@
 interface:
   display_name: "Systematic Debugging"
   short_description: "Find root causes before attempting fixes."
-  default_prompt: "Use $systematic-debugging to investigate this bug, gather evidence, and find the root cause before fixing it."
+  default_prompt: "Use $systematic-debugging to investigate this failure, isolate the root cause, and only then apply and verify the smallest safe fix."

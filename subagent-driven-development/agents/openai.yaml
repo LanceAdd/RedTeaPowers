@@ -1,4 +1,4 @@
 interface:
-  display_name: "Subagent-Driven Dev"
-  short_description: "Execute tasks with subagents and review gates."
-  default_prompt: "Use $subagent-driven-development to execute this plan or batch with subagents and review checkpoints."
+  display_name: "Subagent-Driven Development"
+  short_description: "Execute a plan or batch with subagents and review gates."
+  default_prompt: "Use $subagent-driven-development to execute this plan or batch with fresh subagents, bounded write scopes, and review checkpoints."

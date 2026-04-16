@@ -15,7 +15,11 @@ You are reviewing code changes for production readiness.
 
 ## Requirements/Plan
 
-{PLAN_REFERENCE}
+{PLAN_OR_REQUIREMENTS}
+
+## Validation Evidence So Far
+
+{VALIDATION_EVIDENCE}
 
 ## Git Range to Review
 

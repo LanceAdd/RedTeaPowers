@@ -1,105 +1,88 @@
 ---
 name: requesting-code-review
-description: Use when completing tasks, implementing major features, or before merging to verify work meets requirements
+description: Use when a completed change, meaningful batch, risky refactor, or pre-merge branch needs focused review. Prepare the reviewer with scope, requirements, diff range, validation evidence, and open concerns so feedback targets real risks instead of generic commentary.
 ---
 
 # Requesting Code Review
 
-Dispatch redteapowers:code-reviewer subagent to catch issues before they cascade. The reviewer gets precisely crafted context for evaluation — never your session's history. This keeps the reviewer focused on the work product, not your thought process, and preserves your own context for continued work.
+## Overview
 
-**Core principle:** Review early, review often.
+Request review when fresh eyes will meaningfully reduce risk, not as empty ceremony.
 
-## When to Request Review
+Prefer review after a meaningful task boundary, batch, or branch milestone. Do not create extra review churn by asking for a separate review on every tiny edit when one bounded batch would be more useful.
 
-**Mandatory:**
-- After each task in subagent-driven development
-- After completing major feature
-- Before merge to main
+## When To Request Review
 
-**Optional but valuable:**
-- When stuck (fresh perspective)
-- Before refactoring (baseline check)
-- After fixing complex bug
+Strong default moments:
 
-## How to Request
+- after a meaningful implementation batch
+- before merging a risky or important branch
+- after a complex bug fix
+- when a refactor may have hidden regressions
+- when you want an independent check against requirements or scope
 
-**1. Get git SHAs:**
-```bash
-BASE_SHA=$(git rev-parse HEAD~1)  # or origin/main
-HEAD_SHA=$(git rev-parse HEAD)
+Usually unnecessary:
+
+- after a trivial isolated edit with obvious evidence
+- before the change is coherent enough to review
+- multiple times for the same write scope without new material risk
+
+## Review Bundle
+
+Before requesting review, prepare a small bundle containing:
+
+- what changed
+- what requirement, plan, checklist, or bug fix the change should satisfy
+- what files or diff range the reviewer should inspect
+- what validation evidence already exists
+- any known risks, tradeoffs, or questions you want the reviewer to focus on
+
+Keep the bundle concise. Give enough context to review the work, not your whole session history.
+
+## Workflow
+
+1. Choose the review point: batch, branch, risky fix, or pre-merge state.
+2. Gather the review bundle.
+3. Choose the reviewer path:
+   - human review
+   - agent or subagent review
+   - both, when the work is important enough to justify it
+4. Ask for review with bounded scope.
+5. Route the resulting feedback through `redteapowers:receiving-code-review` before implementing comments blindly.
+
+## For Agent-Or-Subagent Review
+
+Use `code-reviewer.md` as the review prompt template when dispatching a reviewer agent.
+
+Prefer including:
+
+- `BASE_SHA` and `HEAD_SHA` when the review is diff-based
+- the active plan, checklist, or requirement excerpt
+- the chosen validation evidence
+- any specific areas where you want extra scrutiny
+
+## Review Quality Rules
+
+- ask for review on the real scope, not a fuzzy "look around"
+- include verification evidence that already exists
+- name unresolved questions instead of hiding them
+- do not describe the work as complete if `verification-before-completion` has not happened yet
+- keep documentation references and copied excerpts in UTF-8 text
+
+## Output
+
+Use a request shaped like:
+
+```text
+Review scope: settings cleanup batch
+Requirements: Task 2 from docs/plan/004-settings-refresh.md
+Diff range: 3d2c1ab..9f4e001
+Validation so far: targeted regression test plus manual settings screen check
+Focus areas: loading state regressions, mobile layout, copy consistency
 ```
 
-**2. Dispatch code-reviewer subagent:**
+## Integration
 
-Use Task tool with redteapowers:code-reviewer type, fill template at `code-reviewer.md`
-
-**Placeholders:**
-- `{WHAT_WAS_IMPLEMENTED}` - What you just built
-- `{PLAN_OR_REQUIREMENTS}` - What it should do
-- `{BASE_SHA}` - Starting commit
-- `{HEAD_SHA}` - Ending commit
-- `{DESCRIPTION}` - Brief summary
-
-**3. Act on feedback:**
-- Fix Critical issues immediately
-- Fix Important issues before proceeding
-- Note Minor issues for later
-- Push back if reviewer is wrong (with reasoning)
-
-## Example
-
-```
-[Just completed Task 2: Add verification function]
-
-You: Let me request code review before proceeding.
-
-BASE_SHA=$(git log --oneline | grep "Task 1" | head -1 | awk '{print $1}')
-HEAD_SHA=$(git rev-parse HEAD)
-
-[Dispatch redteapowers:code-reviewer subagent]
-  WHAT_WAS_IMPLEMENTED: Verification and repair functions for conversation index
-  PLAN_OR_REQUIREMENTS: Task 2 from docs/plan/NNN-topic.md or the active checklist
-  BASE_SHA: a7981ec
-  HEAD_SHA: 3df7661
-  DESCRIPTION: Added verifyIndex() and repairIndex() with 4 issue types
-
-[Subagent returns]:
-  Strengths: Clean architecture, real tests
-  Issues:
-    Important: Missing progress indicators
-    Minor: Magic number (100) for reporting interval
-  Assessment: Ready to proceed
-
-You: [Fix progress indicators]
-[Continue to Task 3]
-```
-
-## Integration with Workflows
-
-**Subagent-Driven Development:**
-- Review after EACH task
-- Catch issues before they compound
-- Fix before moving to next task
-
-**Executing Plans:**
-- Review after each batch (3 tasks)
-- Get feedback, apply, continue
-
-**Ad-Hoc Development:**
-- Review before merge
-- Review when stuck
-
-## Red Flags
-
-**Never:**
-- Skip review because "it's simple"
-- Ignore Critical issues
-- Proceed with unfixed Important issues
-- Argue with valid technical feedback
-
-**If reviewer wrong:**
-- Push back with technical reasoning
-- Show code/tests that prove it works
-- Request clarification
-
-See template at: requesting-code-review/code-reviewer.md
+- `redteapowers:subagent-driven-development` and `redteapowers:executing-plans` can request review at meaningful checkpoints
+- `redteapowers:receiving-code-review` handles incoming feedback
+- `redteapowers:verification-before-completion` still decides whether the work is ready to be claimed as done

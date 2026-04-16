@@ -31,15 +31,16 @@ Do not use this skill when:
    - Dispatch an implementer subagent with the full task text and context
    - Resolve questions or blockers before implementation proceeds
    - Review for scope compliance
-   - Review for code quality
+   - Review for code quality and request external review only when the batch risk or checkpoint justifies it
    - Mark the item complete only when both reviews pass
-4. After all items complete, use `finishing-a-development-branch`.
+4. After all items complete, use `verification-before-completion`, then use `finishing-a-development-branch`.
 
 ## Task And Batch Handling
 
 - A task may be a single component or a grouped cleanup batch.
 - Do not split a healthy batch into smaller tasks just to preserve artificial granularity.
 - Do split a task when the implementer is blocked by scope or context.
+- Parallelize only across disjoint write scopes that can be reviewed independently.
 - If the plan becomes obviously wrong, stop and re-route instead of grinding through it.
 
 ## Reviews
@@ -48,8 +49,10 @@ Review in this order:
 
 1. Scope compliance: did the implementation match the requested task or batch, with nothing important missing and no unnecessary expansion?
 2. Code quality: is the implementation clean, maintainable, and appropriately verified?
+3. Request additional code review only when the checkpoint is important enough to benefit from fresh outside scrutiny.
 
 Do not start the code quality review while scope issues are still open.
+Do not create review churn by requesting a separate extra review for every tiny delegated item.
 
 ## Handling Implementer Status
 
@@ -68,11 +71,12 @@ Never ignore a blocker and never force the same failed setup to repeat.
 - Better same-session momentum than fully manual execution
 - Review catches scope drift before it compounds
 - Supports both formal plans and lighter grouped checklists
+- Allows meaningful batching without forcing one huge inline execution context
 
 ## Red Flags
 
 Never:
-- Start implementation on main/master without explicit user consent
+- Start implementation on the shared default branch without explicit user consent
 - Dispatch multiple implementers in parallel against the same write scope
 - Make the implementer read the plan file when you can provide the relevant excerpt
 - Skip either review stage
@@ -84,6 +88,7 @@ Never:
 - `redteapowers:using-git-worktrees` sets up isolated execution
 - `redteapowers:writing-plans` creates plans when a plan is warranted
 - `redteapowers:choosing-test-strategy` decides the validation mode before implementation
-- `redteapowers:requesting-code-review` provides reviewer context
+- `redteapowers:requesting-code-review` helps when a delegated batch needs focused outside review
+- `redteapowers:verification-before-completion` confirms the real completion evidence after the delegated batches land
 - `redteapowers:finishing-a-development-branch` completes the branch
 - `redteapowers:executing-plans` is the inline alternative for the same artifact

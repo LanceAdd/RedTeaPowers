@@ -49,7 +49,11 @@ Use `../shaping-work/references/002-opened-topic-stabilization.md` when deciding
 
 ## Step 4: Complete Development
 
-After all tasks or batches are complete and verified:
+After all tasks or batches are complete:
+- Announce: "I'm using the verification-before-completion skill to confirm the completion evidence."
+- Use `redteapowers:verification-before-completion`
+
+After completion evidence is confirmed:
 - Announce: "I'm using the finishing-a-development-branch skill to complete this work."
 - Use `redteapowers:finishing-a-development-branch`
 
@@ -70,7 +74,7 @@ Do not force progress through a bad plan.
 - Follow the plan or checklist, not your urge to improvise scope
 - Verify with the chosen evidence, not with assumptions
 - Re-route when the artifact is wrong for the work
-- Never start implementation on main/master without explicit user consent
+- Never start implementation on the shared default branch without explicit user consent
 - Once the mainline is stable, optimize for batch progress, lower sync cost, and early real-experience evidence
 
 ## Integration
@@ -79,4 +83,5 @@ Do not force progress through a bad plan.
 - `redteapowers:writing-plans` creates formal plans when needed
 - `redteapowers:managing-project-docs` helps when a checklist belongs in `todolist`
 - `redteapowers:shaping-work` decides when a topic should switch from first-slice work into batch delivery mode
+- `redteapowers:verification-before-completion` confirms that the claimed completion evidence is real before branch closeout
 - `redteapowers:finishing-a-development-branch` completes the branch after execution

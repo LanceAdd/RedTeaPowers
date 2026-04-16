@@ -33,8 +33,8 @@ Choose process skills in this order:
 3. `brainstorming` only when the work actually needs collaborative design and decision-making
 4. `managing-project-docs` when deciding which document type to create or update
 5. `migrating-project-docs` when legacy project documents need conversion into the RedTeaPowers taxonomy
-6. `writing-plans` only when the chosen route needs an implementation plan
-7. `choosing-test-strategy` before locking in validation or writing a plan that assumes TDD
+6. `choosing-test-strategy` when validation is not already obvious or before writing a plan that depends on the validation mode
+7. `writing-plans` only when the chosen route needs a formal plan or a multi-step execution artifact beyond a simple todolist
 8. `test-driven-development` only when TDD was explicitly chosen or clearly requested
 
 ## Decision Flow
@@ -52,10 +52,10 @@ digraph skill_flow {
     "Use brainstorming" [shape=box];
     "Needs document decision?" [shape=diamond];
     "Use managing-project-docs" [shape=box];
-    "Needs implementation plan?" [shape=diamond];
-    "Use writing-plans" [shape=box];
     "Needs validation decision?" [shape=diamond];
     "Use choosing-test-strategy" [shape=box];
+    "Needs implementation plan?" [shape=diamond];
+    "Use writing-plans" [shape=box];
     "TDD selected?" [shape=diamond];
     "Use test-driven-development" [shape=box];
 
@@ -72,14 +72,14 @@ digraph skill_flow {
     "Needs collaborative design?" -> "Needs document decision?" [label="no"];
     "Use brainstorming" -> "Needs document decision?";
     "Needs document decision?" -> "Use managing-project-docs" [label="yes"];
-    "Needs document decision?" -> "Needs implementation plan?" [label="no"];
-    "Use managing-project-docs" -> "Needs implementation plan?";
-    "Needs implementation plan?" -> "Use writing-plans" [label="yes"];
-    "Needs implementation plan?" -> "Needs validation decision?" [label="no"];
-    "Use writing-plans" -> "Needs validation decision?";
+    "Needs document decision?" -> "Needs validation decision?" [label="no"];
+    "Use managing-project-docs" -> "Needs validation decision?";
     "Needs validation decision?" -> "Use choosing-test-strategy" [label="yes"];
-    "Needs validation decision?" -> "TDD selected?" [label="no"];
-    "Use choosing-test-strategy" -> "TDD selected?";
+    "Needs validation decision?" -> "Needs implementation plan?" [label="no"];
+    "Use choosing-test-strategy" -> "Needs implementation plan?";
+    "Needs implementation plan?" -> "Use writing-plans" [label="yes"];
+    "Needs implementation plan?" -> "TDD selected?" [label="no"];
+    "Use writing-plans" -> "TDD selected?";
     "TDD selected?" -> "Use test-driven-development" [label="yes"];
     "TDD selected?" -> "Execute work" [label="no"];
     "Use test-driven-development" -> "Execute work";

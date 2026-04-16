@@ -1,4 +1,4 @@
 interface:
   display_name: "Requesting Code Review"
-  short_description: "Request focused code review before merging."
-  default_prompt: "Use $requesting-code-review to prepare and request focused code review for this implementation."
+  short_description: "Prepare a focused review request with scope and evidence."
+  default_prompt: "Use $requesting-code-review to package this change for focused review with the right scope, requirements, and validation evidence."
