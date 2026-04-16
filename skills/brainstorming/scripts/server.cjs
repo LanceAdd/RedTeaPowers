@@ -302,6 +302,8 @@ function startServer() {
     console.log(JSON.stringify({ type: 'server-stopped', reason }));
     const infoFile = path.join(STATE_DIR, 'server-info');
     if (fs.existsSync(infoFile)) fs.unlinkSync(infoFile);
+    const pidFile = path.join(STATE_DIR, 'server.pid');
+    if (fs.existsSync(pidFile)) fs.unlinkSync(pidFile);
     fs.writeFileSync(
       path.join(STATE_DIR, 'server-stopped'),
       JSON.stringify({ reason, timestamp: Date.now() }) + '\n'
@@ -343,6 +345,7 @@ function startServer() {
       screen_dir: CONTENT_DIR, state_dir: STATE_DIR
     });
     console.log(info);
+    fs.writeFileSync(path.join(STATE_DIR, 'server.pid'), String(process.pid) + '\n');
     fs.writeFileSync(path.join(STATE_DIR, 'server-info'), info + '\n');
   });
 }

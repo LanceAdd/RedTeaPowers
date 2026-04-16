@@ -170,13 +170,15 @@ skills/<skill-name>/
 git clone git@github.com:LanceAdd/RedTeaPowers.git
 ```
 
-然后把你需要的 skill 目录从 `skills/` 复制到 Codex 的 skills 目录：
+按整包安装 RedTeaPowers：把 `skills/` 下当前 active package 的 skill 目录一起复制到 Codex 的 skills 目录：
 
 ```text
 ~/.codex/skills
 ```
 
-`PACKAGE.md` 适合作为 package 说明，但运行时真正被发现的是每个独立的 skill 目录。
+支持的安装单位是当前 active package，不保证单独抽取某一个 skill 后仍然完整可用。
+
+`PACKAGE.md` 适合作为 package 说明，但运行时真正被发现的是一起安装到位的各个 skill 目录。
 
 ## 🔧 打包规则
 
@@ -190,6 +192,7 @@ git clone git@github.com:LanceAdd/RedTeaPowers.git
 
 - 运行时引用要么放在 skill 自己内部
 - 要么引用分发后仍然存在的 sibling skill
+- 因此安装时应保持 active package 一起落地，保证 sibling skill 引用仍然可用
 
 ## 🔁 从旧版迁移
 

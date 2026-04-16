@@ -171,13 +171,15 @@ Clone the repository:
 git clone git@github.com:LanceAdd/RedTeaPowers.git
 ```
 
-Copy the skill directories you want from `skills/` into your Codex skills directory:
+Install RedTeaPowers as one package by copying the included skill directories from `skills/` into your Codex skills directory:
 
 ```text
 ~/.codex/skills
 ```
 
-`PACKAGE.md` is useful package documentation, but runtime discovery depends on the individual skill folders.
+The supported installation unit is the active RedTeaPowers package, not a one-off single skill copy.
+
+`PACKAGE.md` is useful package documentation, but runtime discovery depends on the installed skill folders being present together.
 
 ## 🔧 Packaging Rule
 
@@ -191,6 +193,7 @@ In practice:
 
 - keep runtime references inside the skill itself
 - or use sibling-skill relative references that still exist after flat distribution
+- install the active package together so sibling-skill references remain valid at runtime
 
 ## 🔁 Migration References
 

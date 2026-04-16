@@ -29,7 +29,8 @@ It includes only the skills currently marked `Keep` in the source library status
 ## Packaging Rules
 
 - Treat this directory as UTF-8 text by default for all documentation reads and writes.
-- Copy selected directories from `skills/` into the runtime Codex skills directory as flat installable skill folders.
+- Install the active RedTeaPowers package as one set by copying the included directories from `skills/` into the runtime Codex skills directory as flat installable skill folders.
+- Do not assume a single skill directory will work correctly when copied in isolation; active skills may reference sibling skills from the same package.
 - Do not make runtime skill behavior depend on repository-root docs or files that will not ship inside the selected skill directories.
 - Keep archived or experimental skills out of this package unless they are explicitly promoted.
 - Use `skills/using-redteapowers/references/library-status-matrix.md` in the source library when deciding future additions or removals.
